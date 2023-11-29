@@ -1,6 +1,7 @@
 import { Container } from './style'
 
 import { Search } from '../SVGs/Search'
+import { Menu } from '../SVGs/Menu'
 
 export function Header(){
 	return(
@@ -10,9 +11,14 @@ export function Header(){
 				<span>Collection</span>
 			</div>
 			
-			<input type="text" />
+			<div className="search">
+				<input type="text" />
 
-			<Search/>
+				<Search/>
+
+				<Menu/>
+			</div>
+			
 
 		</Container>
 	)
