@@ -1,9 +1,13 @@
 export const Themes =  {
 	colors:{
-		blue: '#0085ff',
+		background: '#F0F8FF',
+		cardColor: '#ffffff',
+		
+		blue: '#1E90FF',
 		colorFont1: '#8e8e8e',
-		colorFont2: '#ffffff',
+		colorFont2: '#F0F8FF',
+
 		buttonDelite: '#FF2F2F',
-		hexaColor: '#ffffff'
+		hexaColor: '#000000'
 	}
 }

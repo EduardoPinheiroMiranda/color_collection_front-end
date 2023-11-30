@@ -1,85 +1,63 @@
 import Styled from 'styled-components'
 
 export const Container = Styled.div`
-   
-    margin: 0 auto;
-
-    >.titleProject{
-        display: flex;
-
-        margin-bottom: 1.5rem;
-
-        h2{
-            color: ${({ theme }) => theme.colors.colorFont1};
-            font-size: 1.4rem;
-            font-weight: 900;
-
-        }
-        
-        #arrow{
-            display: flex;
-            align-items: end;
-
-            svg{
-                fill: ${({ theme }) => theme.colors.colorFont1};
-            }
-        }
-    }
-
+    background-color: ${({ theme }) => theme.colors.cardColor};
     
+    min-width: 32rem;
+    max-width: 60rem;
+    height: 27rem;
+
+    border-radius: 0 0 0.5rem 0.5rem;
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.25);
+
+
+    margin: 0 auto;
+    margin-bottom: 5rem;
 
 `
 
-export const BodyPallete = Styled.div`
-    margin-bottom: 2rem;
-`
-
-export const Colors = Styled.div`
-
-    min-width: 28rem;
-    max-width: 30rem;
+export const Colors = Styled.section`
 
     display: flex;
-    cursor: pointer;
-
-    border-radius: 1rem;
-    box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.25);
-    
 
     >.color{
 
-        min-width: 5.6rem;
-        max-Width: 6rem;
-        height: 10rem;
-        transition: all 300ms;
+        min-width: 6.4rem;
+        width: 12rem;
+        height: 20rem;
+
+        padding-bottom: 2rem;
+
+        text-align: center;
+
+        display: flex;
+        align-items: end;
+        justify-content: center;
+
+        flex: 1;
+
+        cursor: pointer;
+        transition: all 500ms;
 
         .infoColor{
-            
-
-            text-align: center;
-            margin-top: 6rem;
-
             span{
                 font-size: 1rem;
                 font-weight: 400;
             }
+
+            #copy svg{
+                width: 1rem;
+                height: 1rem;
+
+                margin-top: 1rem;
+            }
         }
-    }
 
-    .color:first-child{
-        border-radius: 0.5rem 0 0 0.5rem;
-    }
-
-    .color:last-child{
-        border-radius: 0 0.5rem 0.5rem 0;
     }
 
     >.color:hover{
+        flex: 2;
 
-        transform: scale(1.2);
-        margin: 0 7px;
-
-        border-radius: 5px;
     }
 
     
@@ -87,24 +65,29 @@ export const Colors = Styled.div`
 `
 
 export const BodyInfo = Styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
+    padding: 1.5rem 1rem;
 
     >.description{
-        display: flex;
 
-        p{
+        p, span{
             color: ${({ theme }) => theme.colors.colorFont1};
-            font-size: 1rem;
-            font-weight: 900;
+
+            font-size: 1.2rem;
+            font-weight: 400;
+
+            margin-bottom: 0.5rem;
         }
-
-        #arrow svg{
-            fill: ${({ theme }) => theme.colors.colorFont1};
-            width: 1.5rem;
-            height: 1.5rem;
-
-            cursor: pointer;
+        span{
+            margin-left: 1rem;
         }
+    }
 
+    >#heart svg{
+        color: ${({ theme }) => theme.colors.colorFont1};
+        cursor: pointer;
     }
 `

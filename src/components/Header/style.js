@@ -5,21 +5,22 @@ export const Container = Styled.header`
     color: ${({ theme }) => theme.colors.colorFont2};
     box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.25);
 
-    min-width: 32rem;
-    max-width: 144rem;
-    height: 4rem;
-    padding: 0 2rem;
+    min-width: 36rem;
+    max-width: 75rem;
+    height: 7rem;
+    padding: 0 2.5rem;
 
 
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 3rem;
 
     >.logo{
         display: grid;
 
         span{
-            font-size: 1.4rem;
+            font-size: 2rem;
             font-weight: 900;
         }
     }
@@ -31,21 +32,22 @@ export const Container = Styled.header`
         input{
             color: ${({ theme }) => theme.colors.colorFont1};
 
-            width: 11.3rem;
+            min-width: 13rem;
+            width: 100%;
             height: 2rem;
 
             padding: 0 1rem;
 
-            border-radius: 1rem;
+            border-radius: 0 1rem;
             border: none;
 
             outline-style: none;
             
 
-            margin: 0 1rem 0 4rem;
+        }
+
+        #search svg{
+            margin: 0 2rem 0 1rem;
         }
     }
-
-    
-
 `

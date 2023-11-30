@@ -1,11 +1,13 @@
 import Styled from 'styled-components'
 
 export const Container = Styled.div`
-    >main{
-        min-width: 28rem;
-        max-width: 30rem;
+    background-color: ${({ theme }) => theme.colors.background};
 
-        padding: 3rem 1rem;
+    
+
+    >main{
+        padding: 5rem 2rem;
     }
+    
     
 `
