@@ -49,5 +49,11 @@ export const Container = Styled.header`
         #search svg{
             margin: 0 2rem 0 1rem;
         }
+        
+        .menuOn{
+            transform: rotate(90deg);
+        }
     }
+
+    
 `

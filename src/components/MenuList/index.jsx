@@ -18,13 +18,7 @@ export function MenuList(){
 		links[id].classList.add('selectColor')
 	}
 
-	function closeMenu(){
-		
-		const menuList = document.querySelector('#menuList')
-		alert('test')
-	}
-
-
+	
 	return(
 		<Container id='menuList'>
 			
@@ -133,6 +127,8 @@ export function MenuList(){
 
 				</ul>
 			</Navbar>
+
+			<div className="blockedSection"></div>
 		</Container>
 	)
 }

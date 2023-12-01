@@ -7,8 +7,12 @@ export function Header(){
 
 	function openMenu(){
 		const menuList = document.querySelector('#menuList')
+		const menuIcon = document.querySelector('#menu svg')
+		const blockedSection = document.querySelector('.blockedSection')
 
 		menuList.classList.toggle('closeMenu')
+		menuIcon.classList.toggle('menuOn')
+		blockedSection.classList.toggle('blockedSectionOn')
 	}
 
 	return(

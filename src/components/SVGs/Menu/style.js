@@ -7,5 +7,6 @@ export const Container = Styled.div`
         height: 2rem;
 
         cursor: pointer;
+        transition: all 500ms;
     }
 `

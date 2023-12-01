@@ -2,14 +2,27 @@ import Styled from 'styled-components'
 
 export const Container = Styled.div`
 
-    background-color: transparent;
-    width: 100%;
 
+    width: 100%;
     height: calc(100vh - 7rem);
 
+    display: flex;
+    
     transform: translateX(-75rem);
+    transition: all 600ms;
 
-    transition: all 500ms;
+    .blockedSection{
+        background-color: rgba(0, 0, 0, 0.10);
+
+        width: 100%;
+        height: 100%;
+
+        opacity: 0;
+        transition: all 600ms;
+    }
+    .blockedSectionOn{
+        opacity: 1;
+    }
 
 `
 
@@ -49,8 +62,7 @@ export const TagsElements = Styled.li`
     display: flex;
     align-items: center;
 
-    position: relative;
-
+    position: relative;;
 
     .link{
         padding: 0 3rem;
