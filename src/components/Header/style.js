@@ -5,8 +5,7 @@ export const Container = Styled.header`
     color: ${({ theme }) => theme.colors.colorFont2};
     box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.25);
 
-    min-width: 36rem;
-    max-width: 75rem;
+    width: 100%;
     height: 7rem;
     padding: 0 2.5rem;
 

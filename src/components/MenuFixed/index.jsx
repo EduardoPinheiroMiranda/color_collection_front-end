@@ -1,6 +1,7 @@
-import { Container, Navbar, TagsElements } from './style'
+import { Search } from '../SVGs/Search'
+import { Container, Header, NavBar, TagsElements } from './style'
 
-export function MenuList(){
+export function MenuFixed (){
 
 	function selectSection(id){
 		const sections = document.querySelectorAll('.sections')
@@ -18,11 +19,19 @@ export function MenuList(){
 		links[id].classList.add('selectColor')
 	}
 
-	
 	return(
-		<Container id='menuList'>
-			
-			<Navbar>
+		<Container id='menuFixed'>
+			<Header>
+				<h2>Color Colletion</h2>
+
+				<div className="input">
+					<input type="text" />
+					<Search/>
+				</div>
+				
+			</Header>
+		
+			<NavBar>
 				<ul>
 					<TagsElements>
 						
@@ -126,9 +135,7 @@ export function MenuList(){
 
 
 				</ul>
-			</Navbar>
-
-			<div className="blockedSection"></div>
+			</NavBar>
 		</Container>
 	)
 }

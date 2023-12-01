@@ -4,12 +4,14 @@ import { Header } from '../../components/Header'
 import { PalleteColor } from '../../components/PalleteColor'
 
 import { collection } from '../../../db_teste'
-import { MenuList } from '../../components/MenuList'
+import { MenuHidden } from '../../components/MenuHidden'
+import { MenuFixed } from '../../components/MenuFixed'
 
 export function Panel(){
 	return(
 		<Container>
 			<Header/>
+			<MenuFixed/>
 			<main>
 				{
 					collection.map( pallete => {
@@ -27,7 +29,7 @@ export function Panel(){
 					})
 				}
 			</main>
-			<MenuList/>
+			<MenuHidden/>
 		</Container>
 	)
 }

@@ -5,17 +5,65 @@ export const Container = Styled.div`
 
     position: relative;
 
-    
-    
+    @media(min-width: 700px){
+        main{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 27rem;
+            gap: 5rem;
+        }
+    }
+
+    @media(min-width: 901px){
+        display: flex;
+
+        #menuList, #header{ display: none; }
+
+        #menuFixed{ display: block; }
+
+        main{
+            
+            display: grid;
+            grid-template-columns: 1fr;
+
+        }
+    }
+
+    @media(min-width: 1024px){
+        main{
+            
+            display: grid;
+            align-items: center;
+            grid-template-columns: repeat(2,1fr);
+        }
+    }
+
+    @media(min-width: 1700px){
+        main{
+            
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+        }
+    }
 
     >main{
-        height: calc(100vh - 7rem);
+
+        height: 100vh;
+        min-width: 36rem;
+        width: 100%;
+
         overflow-y: auto;
 
-        min-width: 36rem;
-        max-width: 137rem;
+        padding: 9rem 2rem;
 
-        padding: 5rem 2rem;
+        display: grid;
+        justify-content: center;
+        
+    }
+
+    #header{
+        position: fixed;
+        top: 0;
     }
     
     #menuList{

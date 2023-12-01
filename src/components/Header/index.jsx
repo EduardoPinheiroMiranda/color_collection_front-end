@@ -16,7 +16,7 @@ export function Header(){
 	}
 
 	return(
-		<Container>
+		<Container id='header'>
 			<div className="logo">
 				<span>Color</span>
 				<span>Collection</span>

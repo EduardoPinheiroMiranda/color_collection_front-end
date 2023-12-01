@@ -8,7 +8,7 @@ export const Container = Styled.div`
 
     display: flex;
     
-    transform: translateX(-75rem);
+    transform: translateX(-90rem);
     transition: all 600ms;
 
     .blockedSection{
