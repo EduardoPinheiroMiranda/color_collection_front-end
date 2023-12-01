@@ -4,6 +4,13 @@ import { Search } from '../SVGs/Search'
 import { Menu } from '../SVGs/Menu'
 
 export function Header(){
+
+	function openMenu(){
+		const menuList = document.querySelector('#menuList')
+
+		menuList.classList.toggle('closeMenu')
+	}
+
 	return(
 		<Container>
 			<div className="logo">
@@ -16,7 +23,7 @@ export function Header(){
 
 				<Search/>
 
-				<Menu/>
+				<Menu onClick={openMenu}/>
 			</div>
 
 		</Container>

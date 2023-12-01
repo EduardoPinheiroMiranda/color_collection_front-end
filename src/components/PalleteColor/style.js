@@ -87,7 +87,12 @@ export const BodyInfo = Styled.div`
     }
 
     >#heart svg{
-        color: ${({ theme }) => theme.colors.colorFont1};
         cursor: pointer;
+        transition: all 500ms;
+
+    }
+
+    >#heart svg:hover{
+        transform: scale(0.8, 0.8)
     }
 `

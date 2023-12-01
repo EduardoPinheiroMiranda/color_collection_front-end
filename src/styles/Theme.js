@@ -8,6 +8,9 @@ export const Themes =  {
 		colorFont2: '#F0F8FF',
 
 		buttonDelite: '#FF2F2F',
-		hexaColor: '#000000'
+		hexaColor: '#000000',
+
+		notLiked: '#D9D9D9',
+		isLiked: '#FF4242',
 	}
 }

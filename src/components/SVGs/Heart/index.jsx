@@ -1,10 +1,13 @@
 import { Container } from './style'
-import { BsHeart } from 'react-icons/bs'
+import { BsHeartFill } from 'react-icons/bs'
 
-export function Heart (){
+export function Heart ({isFavorit, ...rest}){
+
 	return(
 		<Container id='heart'>
-			<BsHeart/>
+			<BsHeartFill {...rest}
+				className={isFavorit === true ? 'isLiked' : ''}
+			/>
 		</Container>
 	)
 }

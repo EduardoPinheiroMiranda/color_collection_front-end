@@ -3,11 +3,12 @@ import { Copy } from '../SVGs/Copy'
 import { Heart } from '../SVGs/Heart'
 
 
-
-const colors = ['#1FD6FF','#1F48FF','#1E90FF','#1FFFDF','#3D1FFF']
-
-
-export function PalleteColor(/*{projectName, type, description, ...rest}*/){
+export function PalleteColor({/*id,*/projectName, type, favorit, colors}){
+	
+	function isLiked(){
+		console.log('adicionado aos favoritos')
+		
+	}
 
 	return(
 		<Container>
@@ -29,11 +30,14 @@ export function PalleteColor(/*{projectName, type, description, ...rest}*/){
 
 			<BodyInfo>
 				<div className="description">
-					<p>Projeto :<span> Bilhete Premiado</span></p>
-					<p>Categoria :<span> Análoga</span></p>
+					<p>Projeto :<span>{projectName}</span></p>
+					<p>Categoria :<span>{type}</span></p>
 				</div>
 
-				<Heart/>
+				<Heart 
+					isFavorit={favorit}
+					onClick={isLiked}
+				/>
 
 			</BodyInfo>
 
