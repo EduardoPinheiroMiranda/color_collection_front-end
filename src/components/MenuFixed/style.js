@@ -31,8 +31,11 @@ export const Header = Styled.div`
         display: flex;
         
         input{
+            color: ${({ theme }) => theme.colors.colorFont1};
+
             width: 25rem;
             height: 2.5rem;
+            padding: 0 2rem;
 
             outline-style: none;
             border: none;

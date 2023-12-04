@@ -10,6 +10,11 @@ export function PalleteColor({/*id,*/projectName, type, favorit, colors}){
 		
 	}
 
+	function copyColor(codColor){
+		
+		navigator.clipboard.writeText(codColor).then(()=> alert('dado copiado'))
+	}
+
 	return(
 		<Container>
 			
@@ -17,8 +22,17 @@ export function PalleteColor({/*id,*/projectName, type, favorit, colors}){
 				{
 					colors.map(color => {
 						return(
-							<div key={color} className='color' style={{background: color}}>
-								<div className='infoColor'>
+							<div 
+								key={color} 
+								className='color' 
+								style={{background: color}}
+							>
+								<div 
+									className='infoColor'
+									onClick={() => {
+										copyColor(color)
+									}}
+								>
 									<span>{color}</span>
 									<Copy/>
 								</div>
