@@ -1,18 +1,29 @@
 import { BodyInfo, Colors, Container } from './style'
 import { Copy } from '../SVGs/Copy'
 import { Heart } from '../SVGs/Heart'
+import { Check } from '../SVGs/Check'
 
-
-export function PalleteColor({/*id,*/projectName, type, favorit, colors}){
+export function PalleteColor({id, projectName, type, favorit, colors}){
 	
 	function isLiked(){
 		console.log('adicionado aos favoritos')
 		
 	}
 
-	function copyColor(codColor){
+	function copyColor(id,codColor){
+		//const idSelector = JSON.stringify('info'+codColor+id)
+
+		navigator.clipboard.writeText('#'+codColor).then( () => {
+			const infoColor = document.querySelector(`#info${codColor}${id}`)
+			infoColor.querySelector('#copy').classList.add('hide')
+			infoColor.querySelector('#check').classList.remove('hide')
+
+			setTimeout( () => {
+				infoColor.querySelector('#copy').classList.remove('hide')
+				infoColor.querySelector('#check').classList.add('hide')
+			},1500)
+		})
 		
-		navigator.clipboard.writeText(codColor).then(()=> alert('dado copiado'))
 	}
 
 	return(
@@ -25,16 +36,19 @@ export function PalleteColor({/*id,*/projectName, type, favorit, colors}){
 							<div 
 								key={color} 
 								className='color' 
-								style={{background: color}}
+								style={{background: `#${color}`}}
 							>
 								<div 
-									className='infoColor'
+									id={'info'+color+id}
+									className= 'infoColor '
 									onClick={() => {
-										copyColor(color)
+										copyColor(id,color)
 									}}
 								>
-									<span>{color}</span>
+									<span>#{color}</span>
 									<Copy/>
+									<Check className='hide'/>
+									
 								</div>
 							</div>
 						)

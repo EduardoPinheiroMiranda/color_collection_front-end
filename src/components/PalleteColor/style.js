@@ -36,10 +36,10 @@ export const Colors = Styled.section`
 
         flex: 1;
 
-        cursor: pointer;
         transition: all 500ms;
 
         .infoColor{
+            cursor: pointer;
             span{
                 font-size: 1rem;
                 font-weight: 400;
@@ -50,6 +50,14 @@ export const Colors = Styled.section`
                 height: 1rem;
 
                 margin-top: 1rem;
+            }
+
+            #check svg{
+                margin-top: 0.5rem;
+            }
+
+            .hide{
+                display: none;
             }
         }
 
