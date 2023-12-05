@@ -61,15 +61,9 @@ export const Header = Styled.div`
 
 export const NavBar = Styled.nav`
      ul{
-        /* li:hover{
-            hr{
-                width: 13rem;
-                opacity: 1;
-            }
-        } */
 
         li:nth-child(n+5){
-            .link{
+            .linkToMeneFixed{
                 margin-left: 2rem;
             }
         }
@@ -89,7 +83,7 @@ export const TagsElements = Styled.li`
 
     position: relative;;
 
-    .link{
+    div:nth-child(1){
         padding: 0 3rem;
         z-index: 2;
 
@@ -104,28 +98,14 @@ export const TagsElements = Styled.li`
             
         }
 
-        hr{
-            background-color: ${({ theme }) => theme.colors.colorFont2};
-
-            width: 0;
-            height: 5px;
-
-            border: none;
-            border-radius: 1rem;
-
-            opacity: 0;
-
-            transition: all 500ms;
-        }
-
-        .selectColor{
+        .colorLink{
             color: ${({ theme }) => theme.colors.blue};
         }
     }
 
    
 
-    .sections{
+    .selector{
         width: 0;
         height: 4rem;
 
@@ -137,11 +117,8 @@ export const TagsElements = Styled.li`
         transition: all 500ms;
     }
 
-    .selector{
+    .selectorOn{
         background-color: ${({ theme }) => theme.colors.colorFont2};
-        color: ${({ theme }) => theme.colors.blue};
-
-       
 
         width: 95%;
         border-radius: 0 0.5rem 0.5rem 0;

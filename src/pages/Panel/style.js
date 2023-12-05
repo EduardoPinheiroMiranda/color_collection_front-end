@@ -17,7 +17,7 @@ export const Container = Styled.div`
     @media(min-width: 901px){
         display: flex;
 
-        #menuList, #header{ display: none; }
+        #menuHidden, #header{ display: none; }
 
         #menuFixed{ display: block; }
 
@@ -66,7 +66,7 @@ export const Container = Styled.div`
         top: 0;
     }
     
-    #menuList{
+    #menuHidden{
         position: absolute;
         top: 7rem;
     }

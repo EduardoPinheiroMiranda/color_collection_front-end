@@ -4,19 +4,19 @@ import { Container, Header, NavBar, TagsElements } from './style'
 export function MenuFixed (){
 
 	function selectSection(id){
-		const sections = document.querySelectorAll('.sections')
-		const links = document.querySelectorAll('.link a')
+		const sections = document.querySelectorAll('.selector')
+		const links = document.querySelectorAll('.linkToMeneFixed')
 		
 		sections.forEach((sectio) => {
-			sectio.classList.remove('selector')
+			sectio.classList.remove('selectorOn')
 		})
-		sections[id].classList.add('selector')
+		sections[id].classList.add('selectorOn')
 
 
 		links.forEach((link) => {
-			link.classList.remove('selectColor')
+			link.classList.remove('colorLink')
 		})
-		links[id].classList.add('selectColor')
+		links[id].classList.add('colorLink')
 	}
 
 	return(
@@ -35,101 +35,90 @@ export function MenuFixed (){
 				<ul>
 					<TagsElements>
 						
-						<div className='link' onClick={() => {selectSection(0)}}>
-							<a >Home</a>
-							<hr />
+						<div onClick={() => {selectSection(0)}}>
+							<a className='linkToMeneFixed'>Home</a>
 						</div>
-						<div className='sections'></div>
+						<div className='selector'></div>
 
 					</TagsElements>
 					<TagsElements>
 						
-						<div className='link' onClick={() => {selectSection(1)}}>
-							<a >Adicionar</a>
-							<hr />
+						<div onClick={() => {selectSection(1)}}>
+							<a className='linkToMeneFixed'>Adicionar</a>
 						</div>
-						<div className='sections'></div>
+						<div className='selector'></div>
 
 					</TagsElements>
 					<TagsElements>
 						
-						<div className='link' onClick={() => {selectSection(2)}}>
-							<a >Favoritos</a>
-							<hr />
+						<div onClick={() => {selectSection(2)}}>
+							<a className='linkToMeneFixed'>Favoritos</a>
 						</div>
-						<div className='sections'></div>
+						<div className='selector'></div>
 
 					</TagsElements>
 					<TagsElements>
 						
-						<div className='link' onClick={() => {selectSection(3)}}>
-							<a >Categoria</a>
-							<hr />
+						<div onClick={() => {selectSection(3)}}>
+							<a className='linkToMeneFixed'>Categoria</a>
 						</div>
-						<div className='sections'></div>
+						<div className='selector'></div>
 
 					</TagsElements>
 					<TagsElements>
 						
-						<div className='link' onClick={() => {selectSection(4)}}>
-							<a >Analogas</a>
-							<hr />
+						<div onClick={() => {selectSection(4)}}>
+							<a className='linkToMeneFixed'>Analogas</a>
 						</div>
-						<div className='sections'></div>
+						<div className='selector'></div>
 
 					</TagsElements>
 					<TagsElements>
 						
-						<div className='link' onClick={() => {selectSection(5)}}>
-							<a >Monocromáticas</a>
-							<hr />
+						<div onClick={() => {selectSection(5)}}>
+							<a className='linkToMeneFixed'>Monocromáticas</a>
 						</div>
-						<div className='sections'></div>
+						<div className='selector'></div>
 
 					</TagsElements>
 					<TagsElements>
 						
-						<div className='link' onClick={() => {selectSection(6)}}>
-							<a >Tríades</a>
-							<hr />
+						<div onClick={() => {selectSection(6)}}>
+							<a className='linkToMeneFixed'>Tríades</a>
 						</div>
-						<div className='sections'></div>
+						<div className='selector'></div>
 
 					</TagsElements>
 					<TagsElements>
 						
-						<div className='link' onClick={() => {selectSection(7)}}>
-							<a >Complementares</a>
-							<hr />
+						<div onClick={() => {selectSection(7)}}>
+							<a className='linkToMeneFixed'>Complementares</a>
 						</div>
-						<div className='sections'></div>
+						<div className='selector'></div>
 
 					</TagsElements>
 					<TagsElements>
 						
-						<div className='link' onClick={() => {selectSection(8)}}>
-							<a >Quadradas</a>
-							<hr />
+						<div onClick={() => {selectSection(8)}}>
+							<a className='linkToMeneFixed'>Quadradas</a>
 						</div>
-						<div className='sections'></div>
+						<div className='selector'></div>
 
 					</TagsElements>
 					<TagsElements>
 						
-						<div className='link' onClick={() => {selectSection(9)}}>
-							<a >Compostas</a>
-							<hr />
+						<div onClick={() => {selectSection(9)}}>
+							<a className='linkToMeneFixed'>Compostas</a>
 						</div>
-						<div className='sections'></div>
+						<div className='selector'></div>
 
 					</TagsElements>
 					<TagsElements >
 						
-						<div className='link' onClick={() => {selectSection(10)}}>
-							<a >Personalizadas</a>
-							<hr />
+						<div onClick={() => {selectSection(10)}}>
+							<a className='linkToMeneFixed'>Personalizadas</a>
 						</div>
-						<div className='sections'></div>
+						<div className='selector'></div>
 
 					</TagsElements>
 

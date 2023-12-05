@@ -6,7 +6,7 @@ import { Menu } from '../SVGs/Menu'
 export function Header(){
 
 	function openMenu(){
-		const menuList = document.querySelector('#menuList')
+		const menuList = document.querySelector('#menuHidden')
 		const menuIcon = document.querySelector('#menu svg')
 		const blockedSection = document.querySelector('.blockedSection')
 

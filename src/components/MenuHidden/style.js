@@ -11,7 +11,7 @@ export const Container = Styled.div`
     transform: translateX(-90rem);
     transition: all 600ms;
 
-    .blockedSection{
+    >.blockedSection{
         background-color: rgba(0, 0, 0, 0.10);
 
         width: 100%;
@@ -20,7 +20,7 @@ export const Container = Styled.div`
         opacity: 0;
         transition: all 600ms;
     }
-    .blockedSectionOn{
+    >.blockedSectionOn{
         opacity: 1;
     }
 
@@ -35,16 +35,9 @@ export const Navbar = Styled.nav`
 
     padding: 5rem 0;
 
-    ul{
-        /* li:hover{
-            hr{
-                width: 13rem;
-                opacity: 1;
-            }
-        } */
-
+    >ul{
         li:nth-child(n+5){
-            .link{
+            .linktoMenuHidden{
                 margin-left: 2rem;
             }
         }
@@ -64,12 +57,13 @@ export const TagsElements = Styled.li`
 
     position: relative;;
 
-    .link{
+    >div:nth-child(1){
         padding: 0 3rem;
         z-index: 2;
+       
 
         a{
-            color: ${({ theme }) => theme.colors.colorFont2};
+            color: ${({ theme })=> theme.colors.colorFont2};
 
             text-decoration: none;
             font-size: 1.6rem;
@@ -79,45 +73,28 @@ export const TagsElements = Styled.li`
             
         }
 
-        hr{
-            background-color: ${({ theme }) => theme.colors.colorFont2};
-
-            width: 0;
-            height: 5px;
-
-            border: none;
-            border-radius: 1rem;
-
-            opacity: 0;
-
-            transition: all 500ms;
-        }
-
-        .selectColor{
+        .colorLink{
             color: ${({ theme }) => theme.colors.blue};
         }
+
     }
 
-   
-
-    .sections{
+    >.selectorOff{
         width: 0;
         height: 4rem;
 
         position: absolute;
         top: 0;
 
-        z-index: 1;
+        z-index: 0;
 
         transition: all 500ms;
     }
 
-    .selector{
+    >.selector{
         background-color: ${({ theme }) => theme.colors.colorFont2};
-        color: ${({ theme }) => theme.colors.blue};
 
-       
-
+        
         width: 95%;
         border-radius: 0 0.5rem 0.5rem 0;
     }

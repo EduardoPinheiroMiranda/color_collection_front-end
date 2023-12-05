@@ -3,124 +3,114 @@ import { Container, Navbar, TagsElements } from './style'
 export function MenuHidden(){
 
 	function selectSection(id){
-		const sections = document.querySelectorAll('.sections')
-		const links = document.querySelectorAll('.link a')
+		const selectors = document.querySelectorAll('.selectorOff')
+		const links = document.querySelectorAll('.linktoMenuHidden')
 		
-		sections.forEach((sectio) => {
-			sectio.classList.remove('selector')
+		selectors.forEach((selector) => {
+			selector.classList.remove('selector')
 		})
-		sections[id].classList.add('selector')
+		selectors[id].classList.add('selector')
 
 
 		links.forEach((link) => {
-			link.classList.remove('selectColor')
+			link.classList.remove('colorLink')
 		})
-		links[id].classList.add('selectColor')
+		links[id].classList.add('colorLink')
+		
 	}
 
 	
 	return(
-		<Container id='menuList'>
+		<Container id='menuHidden'>
 			
 			<Navbar>
 				<ul>
 					<TagsElements>
 						
-						<div className='link' onClick={() => {selectSection(0)}}>
-							<a >Home</a>
-							<hr />
+						<div onClick={() => {selectSection(0)}}>
+							<a className='linktoMenuHidden' href='#' >Home</a>
 						</div>
-						<div className='sections'></div>
+						<div className='selectorOff'></div>
 
 					</TagsElements>
 					<TagsElements>
 						
-						<div className='link' onClick={() => {selectSection(1)}}>
-							<a >Adicionar</a>
-							<hr />
+						<div onClick={() => {selectSection(1)}}>
+							<a className='linktoMenuHidden' href='#' >Adicionar</a>
 						</div>
-						<div className='sections'></div>
+						<div className='selectorOff'></div>
 
 					</TagsElements>
 					<TagsElements>
 						
-						<div className='link' onClick={() => {selectSection(2)}}>
-							<a >Favoritos</a>
-							<hr />
+						<div onClick={() => {selectSection(2)}}>
+							<a className='linktoMenuHidden' href='#' >Favoritos</a>
 						</div>
-						<div className='sections'></div>
+						<div className='selectorOff'></div>
 
 					</TagsElements>
 					<TagsElements>
 						
-						<div className='link' onClick={() => {selectSection(3)}}>
-							<a >Categoria</a>
-							<hr />
+						<div onClick={() => {selectSection(3)}}>
+							<a className='linktoMenuHidden' href='#' >Categoria</a>
 						</div>
-						<div className='sections'></div>
+						<div className='selectorOff'></div>
 
 					</TagsElements>
 					<TagsElements>
 						
-						<div className='link' onClick={() => {selectSection(4)}}>
-							<a >Analogas</a>
-							<hr />
+						<div onClick={() => {selectSection(4)}}>
+							<a className='linktoMenuHidden' href='#' >Analogas</a>
 						</div>
-						<div className='sections'></div>
+						<div className='selectorOff'></div>
 
 					</TagsElements>
 					<TagsElements>
 						
-						<div className='link' onClick={() => {selectSection(5)}}>
-							<a >Monocromáticas</a>
-							<hr />
+						<div onClick={() => {selectSection(5)}}>
+							<a className='linktoMenuHidden' href='#' >Monocromáticas</a>
 						</div>
-						<div className='sections'></div>
+						<div className='selectorOff'></div>
 
 					</TagsElements>
 					<TagsElements>
 						
-						<div className='link' onClick={() => {selectSection(6)}}>
-							<a >Tríades</a>
-							<hr />
+						<div onClick={() => {selectSection(6)}}>
+							<a className='linktoMenuHidden' href='#' >Tríades</a>
 						</div>
-						<div className='sections'></div>
+						<div className='selectorOff'></div>
 
 					</TagsElements>
 					<TagsElements>
 						
-						<div className='link' onClick={() => {selectSection(7)}}>
-							<a >Complementares</a>
-							<hr />
+						<div onClick={() => {selectSection(7)}}>
+							<a className='linktoMenuHidden' href='#' >Complementares</a>
 						</div>
-						<div className='sections'></div>
+						<div className='selectorOff'></div>
 
 					</TagsElements>
 					<TagsElements>
 						
-						<div className='link' onClick={() => {selectSection(8)}}>
-							<a >Quadradas</a>
-							<hr />
+						<div onClick={() => {selectSection(8)}}>
+							<a className='linktoMenuHidden' href='#' >Quadradas</a>
 						</div>
-						<div className='sections'></div>
+						<div className='selectorOff'></div>
 
 					</TagsElements>
 					<TagsElements>
 						
-						<div className='link' onClick={() => {selectSection(9)}}>
-							<a >Compostas</a>
-							<hr />
+						<div onClick={() => {selectSection(9)}}>
+							<a className='linktoMenuHidden' href='#' >Compostas</a>
 						</div>
-						<div className='sections'></div>
+						<div className='selectorOff'></div>
 
 					</TagsElements>
 					<TagsElements >
 						
-						<div className='link' onClick={() => {selectSection(10)}}>
-							<a >Personalizadas</a>
-							<hr />
+						<div onClick={() => {selectSection(10)}}>
+							<a className='linktoMenuHidden' href='#'>Personalizadas</a>
 						</div>
-						<div className='sections'></div>
+						<div className='selectorOff'></div>
 
 					</TagsElements>
 
