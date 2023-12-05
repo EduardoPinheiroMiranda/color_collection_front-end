@@ -9,6 +9,9 @@ export const Container = Styled.div`
     width: 33rem;
     height: 100vh;
 
+    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.25);
+
+
 `
 
 export const Header = Styled.div`

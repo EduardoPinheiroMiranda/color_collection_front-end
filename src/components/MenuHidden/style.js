@@ -35,6 +35,8 @@ export const Navbar = Styled.nav`
 
     padding: 5rem 0;
 
+    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.25);
+
     >ul{
         li:nth-child(n+5){
             .linktoMenuHidden{
