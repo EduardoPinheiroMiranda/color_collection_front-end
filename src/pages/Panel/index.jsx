@@ -8,6 +8,7 @@ import { MenuHidden } from '../../components/MenuHidden'
 import { MenuFixed } from '../../components/MenuFixed'
 
 export function Panel(){
+	
 	return(
 		<Container>
 			<Header/>
