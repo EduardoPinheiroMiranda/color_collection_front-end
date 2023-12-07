@@ -6,12 +6,13 @@ import { ThemeProvider } from 'styled-components'
 import { Themes } from './styles/Theme'
 
 import { Panel } from './pages/Panel'
+import { CreatePallete } from './pages/CreatePallete'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<React.StrictMode>
 		<ThemeProvider theme = {Themes}>
 			<GlobalStyle/>
-			<Panel/>
+			<CreatePallete/>
 		</ThemeProvider>
 	</React.StrictMode>,
 )
