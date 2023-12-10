@@ -1,7 +1,7 @@
 import { Container } from './style'
 
 import { Header } from '../../components/Header'
-// import { MenuFixed } from '../../components/MenuFixed'
+import { MenuFixed } from '../../components/MenuFixed'
 import { MenuHidden } from '../../components/MenuHidden'
 
 export function CreatePallete (){
@@ -9,6 +9,7 @@ export function CreatePallete (){
 		<Container>
 			<Header/>
 			<MenuHidden/>
+			<MenuFixed/>
 		</Container>
 	)
 }
