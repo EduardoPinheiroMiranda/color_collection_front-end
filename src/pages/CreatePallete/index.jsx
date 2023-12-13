@@ -9,6 +9,7 @@ export function CreatePallete (){
 		<Container>
 			<Header/>
 			<MenuHidden/>
+			
 			<MenuFixed/>
 		</Container>
 	)
