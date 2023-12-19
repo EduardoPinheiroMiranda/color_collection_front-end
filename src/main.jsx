@@ -5,7 +5,7 @@ import GlobalStyle from './styles/Global'
 import { ThemeProvider } from 'styled-components'
 import { Themes } from './styles/Theme'
 
-import { Panel } from './pages/Panel'
+//import { Panel } from './pages/Panel'
 import { CreatePallete } from './pages/CreatePallete'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
