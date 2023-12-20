@@ -16,6 +16,8 @@ export const Container = Styled.div`
         align-items: center;
         justify-content: center;
 
+        margin: 0 auto;
+
         button{
             background-color: ${({ theme }) => theme.colors.blue};
             color: ${({ theme }) => theme.colors.colorFont2};
@@ -39,6 +41,9 @@ export const Container = Styled.div`
 `
 
 export const InfoPallet = Styled.section`
+    width: 100%;
+    padding: 0 2rem;
+
     h2{
         color: ${({ theme }) => theme.colors.colorFont1};
 
@@ -54,13 +59,12 @@ export const InfoPallet = Styled.section`
         select{
             background-color:  white;
             color: ${({ theme }) => theme.colors.colorFont1};
+
             font-weight: 600;
             font-size: 1.2rem;
             text-align: center;
 
-            min-width: 15rem;
-            max-width: 100%;
-            padding: 0 1rem;
+            width: 20rem;
 
             border: 0.5px solid  ${({ theme }) => theme.colors.blue};
             border-radius: 0.5rem;
@@ -71,7 +75,6 @@ export const InfoPallet = Styled.section`
 
         span{
             color: ${({ theme }) => theme.colors.colorFont1};
-
             font-size: 1.2rem;
             font-weight: 900;
 
@@ -80,11 +83,13 @@ export const InfoPallet = Styled.section`
     }
 
     .name{
+        width: 100%;
         margin-bottom: 3rem;
 
         input{
-            min-width: 15rem;
-            max-width: 100%;
+            color: ${({ theme }) => theme.colors.colorFont1};
+
+            width: 20rem;
             padding: 0 1rem;
 
             border: 0.5px solid  ${({ theme }) => theme.colors.blue};
@@ -105,6 +110,9 @@ export const InfoPallet = Styled.section`
 `
 
 export const CodPallet = Styled.section`
+    width: 100%;
+    padding: 0 2rem;
+
     .header{
         display: flex;
         margin-bottom: 3rem;
@@ -116,15 +124,19 @@ export const CodPallet = Styled.section`
             font-weight: 900;
             margin-right: 1rem;
         }
-
         
     }
     .pallet{
         display: flex;
+        justify-content: center;
+        box-shadow: 0px 2px 5px  rgba(0, 0, 0, 0.25);
+        border-radius: 0.5rem;
+     
 
         .card{
             min-width: 6.3rem;
             max-width: 12rem;
+            width: 100%;
 
             height: 20rem;
 
@@ -135,7 +147,7 @@ export const CodPallet = Styled.section`
 
 
             input{
-                width: 5rem;
+                width: 6rem;
 
                 text-align: center;
                 

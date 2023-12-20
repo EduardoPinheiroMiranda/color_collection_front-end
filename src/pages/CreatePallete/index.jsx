@@ -5,7 +5,30 @@ import { Question } from '../../components/SVGs/Question'
 // import { MenuFixed } from '../../components/MenuFixed'
 // import { MenuHidden } from '../../components/MenuHidden'
 
+const palletColor = ['', '', '', '', '']
+
 export function CreatePallete (){
+
+	function showColor(id){
+		const cards = document.querySelectorAll('.card')
+		const inputs = document.querySelectorAll('.card input')
+		
+		if(inputs[id].value[0] === '#'){
+			
+			if(inputs[id].value.length == 4 || inputs[id].value.length == 7){
+				alert('certo')
+			}
+		}
+
+		
+		
+
+		
+
+		cards[id].setAttribute('style', `background-color: ${inputs[id].value}`)
+		inputs[id].setAttribute('style', `background-color: ${inputs[id].value}`)
+	}
+
 	return(
 		<Container>
 			<Header/>
@@ -40,19 +63,49 @@ export function CreatePallete (){
 
 					<div className="pallet">
 						<div className="card">
-							<input type="text" placeholder='#ffffff'/>
+							<input 
+								type="text" 
+								placeholder='#ffffff'
+								onChange={()=>{
+									showColor(0)
+								}} 
+							/>
 						</div>
 						<div className="card">
-							<input type="text" placeholder='#ffffff'/>
+							<input 
+								type="text" 
+								placeholder='#ffffff'
+								onChange={()=>{
+									showColor(1)
+								}} 
+							/>
 						</div>
 						<div className="card">
-							<input type="text" placeholder='#ffffff'/>
+							<input 
+								type="text" 
+								placeholder='#ffffff'
+								onChange={()=>{
+									showColor(2)
+								}} 
+							/>
 						</div>
 						<div className="card">
-							<input type="text" placeholder='#ffffff'/>
+							<input 
+								type="text" 
+								placeholder='#ffffff'
+								onChange={()=>{
+									showColor(3)
+								}} 
+							/>
 						</div>
 						<div className="card">
-							<input type="text" placeholder='#ffffff'/>
+							<input 
+								type="text" 
+								placeholder='#ffffff'
+								onChange={()=>{
+									showColor(4)
+								}} 
+							/>
 						</div>
 					</div>
 				</CodPallet>
