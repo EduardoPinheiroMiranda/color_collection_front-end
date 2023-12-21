@@ -5,7 +5,15 @@ import { Question } from '../../components/SVGs/Question'
 // import { MenuFixed } from '../../components/MenuFixed'
 // import { MenuHidden } from '../../components/MenuHidden'
 
-const palletColor = ['', '', '', '', '']
+
+
+const newPalletColor = [
+	{
+		name: '',
+		category: '',
+		palletColor: ['', '', '', '', '']
+	}
+]
 
 export function CreatePallete (){
 
@@ -20,9 +28,10 @@ export function CreatePallete (){
 
 
 		function invalidValue(){
-			palletColor[position] = ''
+
+			newPalletColor[0].palletColor = ''
 			colorCard.setAttribute('style', 'background-color: white')
-			inputs[position].setAttribute('style', `background-color: ${palletColor[position]}`)
+			inputs[position].setAttribute('style', `background-color: ${newPalletColor[0].palletColor[position]}`)
 		}
 
 
@@ -43,7 +52,7 @@ export function CreatePallete (){
 
 
 			if(hexadecimalColor.length == 4 || hexadecimalColor.length == 7){
-				palletColor[position] = hexadecimalColor
+				newPalletColor[0].palletColor[position] = hexadecimalColor
 			}
 
 
@@ -54,11 +63,11 @@ export function CreatePallete (){
 
 			colorCard.setAttribute(
 				'style', 
-				`background-color: ${palletColor[position]}; 
-				 border-color: ${palletColor[position]}`
+				`background-color: ${newPalletColor[0].palletColor[position]}; 
+				 border-color: ${newPalletColor[0].palletColor[position]}`
 			)
 
-			inputs[position].setAttribute('style', `background-color: ${palletColor[position]}`)
+			inputs[position].setAttribute('style', `background-color: ${newPalletColor[0].palletColor[position]}`)
 
 			
 		}catch(erro){
