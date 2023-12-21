@@ -2,6 +2,7 @@ import { Container, InfoPallet, CodPallet } from './style'
 
 import { Header } from '../../components/Header'
 import { Question } from '../../components/SVGs/Question'
+import { AbortedDeferredError } from 'react-router-dom'
 // import { MenuFixed } from '../../components/MenuFixed'
 // import { MenuHidden } from '../../components/MenuHidden'
 
@@ -17,8 +18,6 @@ const newPalletColor = [
 
 export function CreatePallete (){
 
-	
-
 	function showColor(position){
 		const cards = document.querySelectorAll('.card')
 		const inputs = document.querySelectorAll('.card input')
@@ -29,7 +28,7 @@ export function CreatePallete (){
 
 		function invalidValue(){
 
-			newPalletColor[0].palletColor = ''
+			newPalletColor[0].palletColor[position] = ''
 			colorCard.setAttribute('style', 'background-color: white')
 			inputs[position].setAttribute('style', `background-color: ${newPalletColor[0].palletColor[position]}`)
 		}
@@ -76,6 +75,21 @@ export function CreatePallete (){
 
 	}
 
+	function saveDate(){
+		const categoryPalletColor = document.querySelector('select')
+		const namePalletColor = document.querySelector('#name')
+
+		try{
+
+			if(namePalletColor.value.length <= 4){
+				alert('erro')
+			}
+
+		}catch(erro){
+			console.log(erro)
+		}
+	}
+
 	return(
 		<Container>
 			<Header/>
@@ -84,13 +98,13 @@ export function CreatePallete (){
 					<h2>Criar paleta de cores</h2>
 					<div className='categore'>
 						<select id='type'>
-							<option value='personalizadas'>personalizadas</option>
-							<option value='analogas'>análogas</option>
-							<option value='complementares'>complementares</option>
-							<option value='compostas'>compostas</option>
-							<option value='monocromaticas'>monocromaticas</option>
-							<option value='quadradas'>quadradas</option>
-							<option value='triades'>triades</option>
+							<option value='personalizada'>personalizada</option>
+							<option value='analoga'>análoga</option>
+							<option value='complementar'>complementar</option>
+							<option value='composta'>composta</option>
+							<option value='monocromatica'>monocromatica</option>
+							<option value='quadrada'>quadrada</option>
+							<option value='triade'>triade</option>
 						</select>
 						<span >Tipo da paleta</span>
 					</div>
@@ -157,7 +171,9 @@ export function CreatePallete (){
 					</div>
 				</CodPallet>
 
-				<button>Salvar</button>
+				<button
+					onClick={saveDate}
+				>Salvar</button>
 				
 			</main>
 		</Container>

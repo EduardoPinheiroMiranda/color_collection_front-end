@@ -24,17 +24,16 @@ export const Container = Styled.div`
             font-size: 1.8rem;
             font-weight: 900;
 
-            min-width: 15rem;
-            max-width: 25rem;
-
-            min-height: 4rem;
-            max-height: 6rem;
+            width: 15rem;
+            height: 4rem;
 
             border-radius: 2.5rem;
             border: none;
             box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.25);
 
             margin-top: 12rem;
+
+            cursor: pointer;
         }
     }
 `
@@ -122,6 +121,10 @@ export const CodPallet = Styled.section`
             font-size: 1.4rem;
             font-weight: 900;
             margin-right: 1rem;
+        }
+
+        svg{
+            cursor: pointer;
         }
         
     }
