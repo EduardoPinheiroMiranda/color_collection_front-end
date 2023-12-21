@@ -9,24 +9,62 @@ const palletColor = ['', '', '', '', '']
 
 export function CreatePallete (){
 
-	function showColor(id){
+	
+
+	function showColor(position){
 		const cards = document.querySelectorAll('.card')
 		const inputs = document.querySelectorAll('.card input')
-		
-		if(inputs[id].value[0] === '#'){
-			
-			if(inputs[id].value.length == 4 || inputs[id].value.length == 7){
-				alert('certo')
-			}
+
+		let hexadecimalColor= inputs[position].value
+		const colorCard = cards[position]
+
+
+		function invalidValue(){
+			palletColor[position] = ''
+			colorCard.setAttribute('style', 'background-color: white')
+			inputs[position].setAttribute('style', `background-color: ${palletColor[position]}`)
 		}
 
-		
-		
 
-		
+		try{
 
-		cards[id].setAttribute('style', `background-color: ${inputs[id].value}`)
-		inputs[id].setAttribute('style', `background-color: ${inputs[id].value}`)
+			if(hexadecimalColor[0] !== '#' && hexadecimalColor.length >= 1){
+				inputs[position].value = '#' + hexadecimalColor
+			}
+
+
+			const checkTheConstruction = hexadecimalColor.split('')
+			checkTheConstruction.forEach((element) => {
+				if(element > 'f'){
+					invalidValue()
+					return
+				}
+			})
+
+
+			if(hexadecimalColor.length == 4 || hexadecimalColor.length == 7){
+				palletColor[position] = hexadecimalColor
+			}
+
+
+			if(hexadecimalColor.length > 7 || hexadecimalColor.length == 0){
+				invalidValue()
+				return
+			}
+
+			colorCard.setAttribute(
+				'style', 
+				`background-color: ${palletColor[position]}; 
+				 border-color: ${palletColor[position]}`
+			)
+
+			inputs[position].setAttribute('style', `background-color: ${palletColor[position]}`)
+
+			
+		}catch(erro){
+			console.log(erro)
+		}
+
 	}
 
 	return(

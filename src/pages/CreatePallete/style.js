@@ -5,7 +5,6 @@ export const Container = Styled.div`
     width: 100%;
   
     main{
-        border: 1px solid red;
 
         height: 100%;
         min-width: 32rem;
