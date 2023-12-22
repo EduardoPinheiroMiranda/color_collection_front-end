@@ -76,7 +76,7 @@ export function CreatePallete (){
 	}
 
 	function saveDate(){
-		const categoryPalletColor = document.querySelector('select')
+		//const categoryPalletColor = document.querySelector('select')
 		const namePalletColor = document.querySelector('#name')
 
 		try{
