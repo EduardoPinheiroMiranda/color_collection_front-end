@@ -2,7 +2,7 @@ import Styled from 'styled-components'
 
 export const Container = Styled.div`
     width: 100%;
-    padding: 15rem 5.5rem ;
+    padding: 10rem 5.5rem ;
     
     main{
         
@@ -100,7 +100,8 @@ export const DadosDeLogin = Styled.div`
             height: 3rem;
 
             display: grid;
-            place-items: center
+            place-items: center;
+
         }
 
         input{

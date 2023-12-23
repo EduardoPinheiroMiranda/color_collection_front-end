@@ -6,7 +6,7 @@ export const Container = Styled.div`
     margin-top: 2rem;
     padding: 0.5rem 2rem;
 
-    transform: translateY(-4rem);
+    transform: translateY(-2rem);
     opacity: 0;
 
     transition: all 800ms;

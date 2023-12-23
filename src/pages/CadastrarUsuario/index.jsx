@@ -5,8 +5,9 @@ import { UserPassword } from '../../components/SVGs/UserPassword'
 import { NotificarErro } from '../../components/NotificarErro'
 import { OcultarSenha } from '../../components/SVGs/OcultarSenha'
 import { ExibirSenha } from '../../components/SVGs/ExibirSenha'
+import { Email } from '../../components/SVGs/Email'
 
-export function Login(){
+export function CadastrarUsuario(){
 
 	function exibirSenha(acao){
 		const exibir = document.querySelector('#exibirSenha')
@@ -28,11 +29,13 @@ export function Login(){
 		}
 	}
 
-	function fazerLogin(){
+	function cadastrarUsuario(){
 		const notificarErro = document.querySelector('#notificarErro')
 
+		const nomeDoUsuario = document.querySelector('#name').value
 		const emailDoUsuario = document.querySelector('#email').value
-		const senhaDoUsuario = document.querySelector('#password').value
+		const senhaDoUsuario = document.querySelector('#newpassword').value
+		const confirmarSenha = document.querySelector('#confirmpassword').value
 
 		function ativarNotificarErro(){
 			notificarErro.classList.add('NotificarErroAtiva')
@@ -42,7 +45,8 @@ export function Login(){
 			}, 3000)
 		}
 
-		if(emailDoUsuario.length == 0 || senhaDoUsuario.length == 0){//verifica se os capos estão vazios
+		if(emailDoUsuario.length == 0 || senhaDoUsuario.length == 0 ||
+			nomeDoUsuario.length == 0 || confirmarSenha.length == 0){//verifica se os capos estão vazios
 			ativarNotificarErro()
 			return
 		}
@@ -51,6 +55,14 @@ export function Login(){
 			ativarNotificarErro()
 			return
 		}
+
+		if(senhaDoUsuario !== confirmarSenha){
+			ativarNotificarErro()
+			return
+		}
+
+		console.log(nomeDoUsuario)
+		
 		
 	}
 
@@ -58,13 +70,28 @@ export function Login(){
 		<Container>
 			<main>
 				<h1>Color Collection</h1>
-				<p>Entrar</p>
+				<p>Criar Conta</p>
 
 				<form>
 					<DadosDeLogin >
 						<div className="dadoDeLogin">
 							<div className="icon">
-								<UserLogin/>
+								<label htmlFor="name">
+									<UserLogin/>
+								</label>
+							</div>
+						
+							<input type='text' id='name' placeholder='Nome completo'/>
+						</div>
+						
+					</DadosDeLogin>
+
+					<DadosDeLogin >
+						<div className="dadoDeLogin">
+							<div className="icon">
+								<label htmlFor="email">
+									<Email/>
+								</label>
 							</div>
 						
 							<input type='text' id='email' placeholder='Email'/>
@@ -75,10 +102,35 @@ export function Login(){
 					<DadosDeLogin >
 						<div className="dadoDeLogin">
 							<div className="icon">
-								<UserPassword/>
+								<label htmlFor="newpassword">
+									<UserPassword/>
+								</label>
 							</div>
 						
-							<input type='password' id='password' placeholder='Senha'/>
+							<input type='password' id='newpassword' placeholder='Crie uma senha'/>
+							
+							<div className="exibirSenha">
+								<ExibirSenha onClick={() => {
+									exibirSenha('exibir')
+								}}/>
+								<OcultarSenha onClick={() => {
+									exibirSenha('ocultar')
+								}}/>
+							</div>
+							
+						</div>
+
+					</DadosDeLogin>
+
+					<DadosDeLogin >
+						<div className="dadoDeLogin">
+							<div className="icon">
+								<label htmlFor="confirmpassword">
+									<UserPassword/>
+								</label>
+							</div>
+						
+							<input type='password' id='confirmpassword' placeholder='Confirmar senha'/>
 							
 							<div className="exibirSenha">
 								<ExibirSenha onClick={() => {
@@ -95,24 +147,22 @@ export function Login(){
 
 					</DadosDeLogin>
 
-					<div className="redefinirSenha">
-						<a href="#">Esqueci a senha</a>
-					</div>
+					
 					
 					<div className="acessarConta">
 						<button 
 							onClick={(event) => {
 								event.preventDefault()
-								fazerLogin()
+								cadastrarUsuario()
 							}}
 						>
-							Entar
+							Cadastrar
 						</button>
 
 					</div>
 
 					<div className="cadastrar">
-						<a href="#">Criar conta</a>
+						<a href="#">Já tenho conta</a>
 					</div>
 
 				</form>
