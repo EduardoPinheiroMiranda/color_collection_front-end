@@ -2,11 +2,8 @@ import { Container, InfoPallet, CodPallet } from './style'
 
 import { Header } from '../../components/Header'
 import { Question } from '../../components/SVGs/Question'
-import { AbortedDeferredError } from 'react-router-dom'
 // import { MenuFixed } from '../../components/MenuFixed'
 // import { MenuHidden } from '../../components/MenuHidden'
-
-
 
 const newPalletColor = [
 	{

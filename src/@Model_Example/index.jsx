@@ -1,6 +1,6 @@
 import { Container } from './style'
 
-export function MensageErro (){
+export function NAME(){
 	return(
 		<Container>
             

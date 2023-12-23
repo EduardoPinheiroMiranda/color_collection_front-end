@@ -1,6 +1,6 @@
 import { Container } from './style'
 
-export function NAME (){
+export function CadastrarUsuário(){
 	return(
 		<Container>
             
