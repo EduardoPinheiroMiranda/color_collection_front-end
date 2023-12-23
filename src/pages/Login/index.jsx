@@ -20,7 +20,12 @@ export function Login(){
 			}, 3000)
 		}
 
-		if(emailDoUsuario.length == 0 || senhaDoUsuario.length == 0){
+		if(emailDoUsuario.length == 0 || senhaDoUsuario.length == 0){//verifica se os capos estão vazios
+			ativarNotificarErro()
+			return
+		}
+
+		if(!emailDoUsuario.includes('@')){ //verifica o emal
 			ativarNotificarErro()
 			return
 		}

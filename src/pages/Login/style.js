@@ -103,12 +103,14 @@ export const DadosDeLogin = Styled.div`
         }
 
         input{
+            color: ${({ theme }) => theme.colors.colorFont1};
+
             font-size: 1.2rem;
             font-weight: 600;
 
             width: 100%;
             height: 3rem;
-            padding: 0 2rem;
+            padding: 0 3rem;
 
             border: none;
 
