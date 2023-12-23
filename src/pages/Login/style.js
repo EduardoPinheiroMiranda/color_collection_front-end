@@ -110,11 +110,23 @@ export const DadosDeLogin = Styled.div`
 
             width: 100%;
             height: 3rem;
-            padding: 0 3rem;
+            padding: 0 2rem;
 
             border: none;
 
             outline-style: none;
+        }
+
+        .exibirSenha{
+
+            width: 3rem;
+            height: 3rem;
+
+            text-align: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center
         }
     }
 

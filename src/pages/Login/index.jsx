@@ -3,8 +3,30 @@ import { Container, DadosDeLogin } from './style'
 import { UserLogin } from '../../components/SVGs/UserLogin'
 import { UserPassword } from '../../components/SVGs/UserPassword'
 import { NotificarErro } from '../../components/NotificarErro'
+import { OcultarSenha } from '../../components/SVGs/OcultarSenha'
+import { ExibirSenha } from '../../components/SVGs/ExibirSenha'
 
 export function Login(){
+
+	function exibirSenha(acao){
+		const exibir = document.querySelector('#exibirSenha')
+		const ocultar = document.querySelector('#ocultarSenha')
+		const tipoDoInput = document.querySelector('#password')
+
+		switch(acao){
+		case 'exibir':
+			exibir.setAttribute('style', 'display: none;')
+			ocultar.setAttribute('style', 'display: block')
+			tipoDoInput.setAttribute('type', 'text')
+			break
+
+		case 'ocultar':
+			exibir.setAttribute('style', 'display: block;')
+			ocultar.setAttribute('style', 'display: none')
+			tipoDoInput.setAttribute('type', 'password')
+			break
+		}
+	}
 
 	function fazerLogin(){
 		const notificarErro = document.querySelector('#notificarErro')
@@ -29,10 +51,6 @@ export function Login(){
 			ativarNotificarErro()
 			return
 		}
-
-			
-
-
 		
 	}
 
@@ -61,6 +79,16 @@ export function Login(){
 							</div>
 						
 							<input type='password' id='password' placeholder='Senha'/>
+							
+							<div className="exibirSenha">
+								<ExibirSenha onClick={() => {
+									exibirSenha('exibir')
+								}}/>
+								<OcultarSenha onClick={() => {
+									exibirSenha('ocultar')
+								}}/>
+							</div>
+							
 						</div>
 						
 						<NotificarErro mensage='Dados invalidos ou incompletos'/>
