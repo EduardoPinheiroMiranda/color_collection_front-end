@@ -7,6 +7,12 @@ import { OcultarSenha } from '../../components/SVGs/OcultarSenha'
 import { ExibirSenha } from '../../components/SVGs/ExibirSenha'
 import { Email } from '../../components/SVGs/Email'
 
+const mensagemsDeErro = [
+	'Erro: dados incompletos ou invalidos',
+	'Erro: email invalido ',
+	'As senhas são diferentes'
+]
+
 export function CadastrarUsuario(){
 
 	function exibirSenha(acao){
@@ -29,6 +35,7 @@ export function CadastrarUsuario(){
 		}
 	}
 
+
 	function cadastrarUsuario(){
 		const notificarErro = document.querySelector('#notificarErro')
 
@@ -37,8 +44,9 @@ export function CadastrarUsuario(){
 		const senhaDoUsuario = document.querySelector('#newpassword').value
 		const confirmarSenha = document.querySelector('#confirmpassword').value
 
-		function ativarNotificarErro(){
+		function ativarNotificarErro(erro){
 			notificarErro.classList.add('NotificarErroAtiva')
+			notificarErro.querySelector('p').textContent = mensagemsDeErro[erro]
 
 			setTimeout(() => {
 				notificarErro.classList.remove('NotificarErroAtiva')
@@ -47,21 +55,21 @@ export function CadastrarUsuario(){
 
 		if(emailDoUsuario.length == 0 || senhaDoUsuario.length == 0 ||
 			nomeDoUsuario.length == 0 || confirmarSenha.length == 0){//verifica se os capos estão vazios
-			ativarNotificarErro()
+			ativarNotificarErro(0)
 			return
 		}
 
 		if(!emailDoUsuario.includes('@')){ //verifica o emal
-			ativarNotificarErro()
+			ativarNotificarErro(1)
 			return
 		}
 
 		if(senhaDoUsuario !== confirmarSenha){
-			ativarNotificarErro()
+			ativarNotificarErro(2)
 			return
 		}
 
-		console.log(nomeDoUsuario)
+		alert('tudo certo')
 		
 		
 	}
@@ -143,7 +151,7 @@ export function CadastrarUsuario(){
 							
 						</div>
 						
-						<NotificarErro mensage='Dados invalidos ou incompletos'/>
+						<NotificarErro mensage={mensagemsDeErro[0]}/>
 
 					</DadosDeLogin>
 
