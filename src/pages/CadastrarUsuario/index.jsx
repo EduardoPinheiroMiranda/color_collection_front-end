@@ -10,15 +10,13 @@ import { Email } from '../../components/SVGs/Email'
 const mensagemsDeErro = [
 	'Erro: dados incompletos ou invalidos',
 	'Erro: email invalido ',
-	'As senhas são diferentes'
+	'Erro: as senhas estão diferentes',
+	'Erro: A senha deve ter no minimo 4 carcteres'
 ]
 
 export function CadastrarUsuario(){
 
-	function exibirSenha(acao){
-		const exibir = document.querySelector('#exibirSenha')
-		const ocultar = document.querySelector('#ocultarSenha')
-		const tipoDoInput = document.querySelector('#password')
+	function exibirDadosDaSenha(exibir, ocultar, tipoDoInput, acao){
 
 		switch(acao){
 		case 'exibir':
@@ -26,13 +24,30 @@ export function CadastrarUsuario(){
 			ocultar.setAttribute('style', 'display: block')
 			tipoDoInput.setAttribute('type', 'text')
 			break
-
+	
 		case 'ocultar':
 			exibir.setAttribute('style', 'display: block;')
 			ocultar.setAttribute('style', 'display: none')
 			tipoDoInput.setAttribute('type', 'password')
 			break
 		}
+
+	}
+
+	function exibirNovaSenha(acao){
+		const exibir = document.querySelector('.exibirNovaSenha')
+		const ocultar = document.querySelector('.ocultarNovaSenha')
+		const tipoDoInput = document.querySelector('#novaSenha')
+
+		exibirDadosDaSenha(exibir, ocultar, tipoDoInput, acao)
+	}
+
+	function exibirConfirmarSenha(acao){
+		const exibir = document.querySelector('.exibirConfirmarSenha')
+		const ocultar = document.querySelector('.ocultarConfirmarSenha')
+		const tipoDoInput = document.querySelector('#confirmarSenha')
+
+		exibirDadosDaSenha(exibir, ocultar, tipoDoInput, acao)
 	}
 
 
@@ -41,8 +56,8 @@ export function CadastrarUsuario(){
 
 		const nomeDoUsuario = document.querySelector('#name').value
 		const emailDoUsuario = document.querySelector('#email').value
-		const senhaDoUsuario = document.querySelector('#newpassword').value
-		const confirmarSenha = document.querySelector('#confirmpassword').value
+		const novaSenha = document.querySelector('#novaSenha').value
+		const confirmarSenha = document.querySelector('#confirmarSenha').value
 
 		function ativarNotificarErro(erro){
 			notificarErro.classList.add('NotificarErroAtiva')
@@ -53,7 +68,7 @@ export function CadastrarUsuario(){
 			}, 3000)
 		}
 
-		if(emailDoUsuario.length == 0 || senhaDoUsuario.length == 0 ||
+		if(emailDoUsuario.length == 0 || novaSenha.length == 0 ||
 			nomeDoUsuario.length == 0 || confirmarSenha.length == 0){//verifica se os capos estão vazios
 			ativarNotificarErro(0)
 			return
@@ -64,8 +79,13 @@ export function CadastrarUsuario(){
 			return
 		}
 
-		if(senhaDoUsuario !== confirmarSenha){
+		if(novaSenha !== confirmarSenha){
 			ativarNotificarErro(2)
+			return
+		}
+
+		if(novaSenha.length <= 3){
+			ativarNotificarErro(3)
 			return
 		}
 
@@ -82,9 +102,9 @@ export function CadastrarUsuario(){
 
 				<form>
 					<DadosDeLogin >
-						<div className="dadoDeLogin">
-							<div className="icon">
-								<label htmlFor="name">
+						<div className='dadoDeLogin'>
+							<div className='icon'>
+								<label htmlFor='name'>
 									<UserLogin/>
 								</label>
 							</div>
@@ -95,9 +115,9 @@ export function CadastrarUsuario(){
 					</DadosDeLogin>
 
 					<DadosDeLogin >
-						<div className="dadoDeLogin">
-							<div className="icon">
-								<label htmlFor="email">
+						<div className='dadoDeLogin'>
+							<div className='icon'>
+								<label htmlFor='email'>
 									<Email/>
 								</label>
 							</div>
@@ -108,21 +128,21 @@ export function CadastrarUsuario(){
 					</DadosDeLogin>
 
 					<DadosDeLogin >
-						<div className="dadoDeLogin">
-							<div className="icon">
-								<label htmlFor="newpassword">
+						<div className='dadoDeLogin'>
+							<div className='icon'>
+								<label htmlFor='novaSenha'>
 									<UserPassword/>
 								</label>
 							</div>
 						
-							<input type='password' id='newpassword' placeholder='Crie uma senha'/>
+							<input type='password' id='novaSenha' placeholder='Crie uma senha'/>
 							
-							<div className="exibirSenha">
-								<ExibirSenha onClick={() => {
-									exibirSenha('exibir')
+							<div className='exibirSenha'>
+								<ExibirSenha className='exibirNovaSenha' onClick={() => {
+									exibirNovaSenha('exibir')
 								}}/>
-								<OcultarSenha onClick={() => {
-									exibirSenha('ocultar')
+								<OcultarSenha className='ocultarNovaSenha' onClick={() => {
+									exibirNovaSenha('ocultar')
 								}}/>
 							</div>
 							
@@ -131,21 +151,21 @@ export function CadastrarUsuario(){
 					</DadosDeLogin>
 
 					<DadosDeLogin >
-						<div className="dadoDeLogin">
-							<div className="icon">
-								<label htmlFor="confirmpassword">
+						<div className='dadoDeLogin'>
+							<div className='icon'>
+								<label htmlFor='confirmarSenha'>
 									<UserPassword/>
 								</label>
 							</div>
 						
-							<input type='password' id='confirmpassword' placeholder='Confirmar senha'/>
+							<input type='password' id='confirmarSenha' placeholder='Confirmar senha'/>
 							
-							<div className="exibirSenha">
-								<ExibirSenha onClick={() => {
-									exibirSenha('exibir')
+							<div className='exibirSenha'>
+								<ExibirSenha className='exibirConfirmarSenha' onClick={() => {
+									exibirConfirmarSenha('exibir')
 								}}/>
-								<OcultarSenha onClick={() => {
-									exibirSenha('ocultar')
+								<OcultarSenha className='ocultarConfirmarSenha' onClick={() => {
+									exibirConfirmarSenha('ocultar')
 								}}/>
 							</div>
 							
@@ -157,7 +177,7 @@ export function CadastrarUsuario(){
 
 					
 					
-					<div className="acessarConta">
+					<div className='acessarConta'>
 						<button 
 							onClick={(event) => {
 								event.preventDefault()
@@ -169,8 +189,8 @@ export function CadastrarUsuario(){
 
 					</div>
 
-					<div className="cadastrar">
-						<a href="#">Já tenho conta</a>
+					<div className='cadastrar'>
+						<a href='#'>Já tenho conta</a>
 					</div>
 
 				</form>

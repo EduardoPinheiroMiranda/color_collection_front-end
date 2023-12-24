@@ -6,6 +6,12 @@ import { NotificarErro } from '../../components/NotificarErro'
 import { OcultarSenha } from '../../components/SVGs/OcultarSenha'
 import { ExibirSenha } from '../../components/SVGs/ExibirSenha'
 
+const mensagemsDeErro = [
+	'Erro: dados incompletos ou invalidos',
+	'Erro: email invalido ',
+	'Erro: usuário ou senha incorretos'
+]
+
 export function Login(){
 
 	function exibirSenha(acao){
@@ -34,8 +40,12 @@ export function Login(){
 		const emailDoUsuario = document.querySelector('#email').value
 		const senhaDoUsuario = document.querySelector('#password').value
 
-		function ativarNotificarErro(){
+		const userTest = 'pinheiomiranda@gmail.com'
+		const senhaTest = '1234'
+
+		function ativarNotificarErro(erro){
 			notificarErro.classList.add('NotificarErroAtiva')
+			notificarErro.querySelector('p').textContent = mensagemsDeErro[erro]
 
 			setTimeout(() => {
 				notificarErro.classList.remove('NotificarErroAtiva')
@@ -43,14 +53,21 @@ export function Login(){
 		}
 
 		if(emailDoUsuario.length == 0 || senhaDoUsuario.length == 0){//verifica se os capos estão vazios
-			ativarNotificarErro()
+			ativarNotificarErro(0)
 			return
 		}
 
 		if(!emailDoUsuario.includes('@')){ //verifica o emal
-			ativarNotificarErro()
+			ativarNotificarErro(1)
 			return
 		}
+
+		if(senhaDoUsuario !== senhaTest && emailDoUsuario !== userTest){
+			ativarNotificarErro(2)
+			return
+		}
+
+		alert('logado')
 		
 	}
 
@@ -91,7 +108,7 @@ export function Login(){
 							
 						</div>
 						
-						<NotificarErro mensage='Dados invalidos ou incompletos'/>
+						<NotificarErro mensage={mensagemsDeErro[0]}/>
 
 					</DadosDeLogin>
 
