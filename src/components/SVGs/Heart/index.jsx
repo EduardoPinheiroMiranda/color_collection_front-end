@@ -4,7 +4,7 @@ import { BsHeartFill } from 'react-icons/bs'
 export function Heart ({isFavorit, ...rest}){
 
 	return(
-		<Container id='heart'>
+		<Container className='heart'>
 			<BsHeartFill {...rest}
 				className={isFavorit === true ? 'isLiked' : ''}
 			/>

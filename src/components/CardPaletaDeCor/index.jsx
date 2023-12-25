@@ -1,9 +1,11 @@
-import { BodyInfo, Colors, Container } from './style'
+import {  Cores, Container, InformacoesDaPaleta } from './style'
+
 import { Copy } from '../SVGs/Copy'
 import { Heart } from '../SVGs/Heart'
 import { Check } from '../SVGs/Check'
+import { MenuDaPaleta } from '../SVGs/MenuDaPaleta'
 
-export function PalleteColor({id, projectName, type, favorit, colors}){
+export function CardPaletaDeCor({id, projectName, type, favorit, colors}){
 	
 	function isLiked(){
 		console.log('adicionado aos favoritos')
@@ -11,7 +13,6 @@ export function PalleteColor({id, projectName, type, favorit, colors}){
 	}
 
 	function copyColor(id,codColor){
-		//const idSelector = JSON.stringify('info'+codColor+id)
 
 		navigator.clipboard.writeText('#'+codColor).then( () => {
 			const infoColor = document.querySelector(`#info${codColor}${id}`)
@@ -25,11 +26,25 @@ export function PalleteColor({id, projectName, type, favorit, colors}){
 		})
 		
 	}
+	
+	function atualizarPaleta(){
+		alert('atualizar')
+	}
+
+	function deletarPaleta(){
+		alert('deletar')
+	}
+
+	function ativarMenuDaPaleta(){
+		const menuDaPaleta = document.querySelector('.menuDaPaleta')
+		menuDaPaleta.classList.toggle('ativarMenu')
+		
+	}
 
 	return(
 		<Container>
 			
-			<Colors className='palleteColors'>
+			<Cores className='palleteColors'>
 				{
 					colors.map(color => {
 						return(
@@ -54,20 +69,33 @@ export function PalleteColor({id, projectName, type, favorit, colors}){
 						)
 					})
 				}
-			</Colors>
+			</Cores>
 
-			<BodyInfo>
-				<div className="description">
-					<p>Projeto :<span>{projectName}</span></p>
-					<p>Categoria :<span>{type}</span></p>
+			<InformacoesDaPaleta>
+				<div className="menuDaPaleta">
+					<p onClick={atualizarPaleta}>Atualizar</p>
+					<p onClick={deletarPaleta}>Deletar</p>
 				</div>
 
-				<Heart 
-					isFavorit={favorit}
-					onClick={isLiked}
-				/>
+				<div className="legenda">
+					<div className="descricao">
+						<p>Projeto :<span>{projectName}</span></p>
+						<p>Categoria :<span>{type}</span></p>
+					</div>
 
-			</BodyInfo>
+					<div className="elementosDeAcao">
+						<Heart 
+							isFavorit={favorit}
+							onClick={isLiked}
+						/>
+
+						<MenuDaPaleta onClick={ativarMenuDaPaleta}/>
+					</div>
+				</div>
+
+				
+
+			</InformacoesDaPaleta>
 
 		</Container>
 	)

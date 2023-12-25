@@ -1,13 +1,13 @@
 import { Container } from './style'
 
 import { Header } from '../../components/Header'
-import { PalleteColor } from '../../components/PalleteColor'
+import { CardPaletaDeCor } from '../../components/CardPaletaDeCor'
 
 import { collection } from '../../../db_teste'
 import { MenuHidden } from '../../components/MenuHidden'
 import { MenuFixed } from '../../components/MenuFixed'
 
-export function Panel(){
+export function CatalogoDeCores(){
 	
 	return(
 		<Container>
@@ -18,7 +18,7 @@ export function Panel(){
 					collection.map( pallete => {
 
 						return(
-							<PalleteColor 
+							<CardPaletaDeCor 
 								key={pallete.id}
 								id={pallete.id}
 								projectName={pallete.name}
