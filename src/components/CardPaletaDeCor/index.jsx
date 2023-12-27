@@ -5,8 +5,9 @@ import { Heart } from '../SVGs/Heart'
 import { Check } from '../SVGs/Check'
 import { MenuDaPaleta } from '../SVGs/MenuDaPaleta'
 
-export function CardPaletaDeCor({id, projectName, type, favorit, colors}){
-	
+
+export function CardPaletaDeCor({id, projectName, type, favorit, colors, posicao}){
+
 	function isLiked(){
 		console.log('adicionado aos favoritos')
 		
@@ -35,21 +36,30 @@ export function CardPaletaDeCor({id, projectName, type, favorit, colors}){
 		alert('deletar')
 	}
 
-	function ativarMenuDaPaleta(){
-		const menuDaPaleta = document.querySelector('.menuDaPaleta')
-		menuDaPaleta.classList.toggle('ativarMenu')
-		
+	function ativarMenuDaPaleta(posicaoDaPaleta){
+		const menusDasPaletas = document.querySelectorAll('.opcoesDoMenu')
+
+		menusDasPaletas.forEach((menuDaPaleta) => {
+			if(menusDasPaletas[posicaoDaPaleta] !== menuDaPaleta){
+				menuDaPaleta.classList.remove('ativarMenu')
+			}
+			
+		})
+
+		menusDasPaletas[posicaoDaPaleta].classList.toggle('ativarMenu')
+		//console.log(posicao)
+
 	}
 
 	return(
-		<Container>
+		<Container className={projectName}>
 			
-			<Cores className='palleteColors'>
+			<Cores>
 				{
 					colors.map(color => {
 						return(
 							<div 
-								key={color} 
+								key={id + color} 
 								className='color' 
 								style={{background: `#${color}`}}
 							>
@@ -72,7 +82,7 @@ export function CardPaletaDeCor({id, projectName, type, favorit, colors}){
 			</Cores>
 
 			<InformacoesDaPaleta>
-				<div className="menuDaPaleta">
+				<div className="opcoesDoMenu">
 					<p onClick={atualizarPaleta}>Atualizar</p>
 					<p onClick={deletarPaleta}>Deletar</p>
 				</div>
@@ -89,7 +99,9 @@ export function CardPaletaDeCor({id, projectName, type, favorit, colors}){
 							onClick={isLiked}
 						/>
 
-						<MenuDaPaleta onClick={ativarMenuDaPaleta}/>
+						<MenuDaPaleta onClick={() => {
+							ativarMenuDaPaleta(posicao)
+						}}/>
 					</div>
 				</div>
 

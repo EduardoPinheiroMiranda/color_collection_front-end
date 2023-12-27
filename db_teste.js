@@ -1,7 +1,7 @@
 export const collection = [
 	{
 		id: '1',
-		name: 'Rifa online',
+		name: 'Rifa online 1',
 		type: 'Personalizada',
 		description: '',
 		colors:[
@@ -15,7 +15,7 @@ export const collection = [
 	},
 	{
 		id: '2',
-		name: 'Color Collection',
+		name: 'Color Collection 1',
 		type: 'Personalizada',
 		description: '',
 		colors:[
@@ -29,7 +29,7 @@ export const collection = [
 	},
 	{
 		id: '3',
-		name: 'Portifolio',
+		name: 'Portifolio 1',
 		type: 'Personalizada',
 		description: '',
 		colors:[
@@ -43,7 +43,7 @@ export const collection = [
 	},
 	{
 		id: '4',
-		name: 'Rifa online',
+		name: 'Rifa online 2',
 		type: 'Personalizada',
 		description: '',
 		colors:[
@@ -57,7 +57,7 @@ export const collection = [
 	},
 	{
 		id: '5',
-		name: 'Color Collection',
+		name: 'Color Collection 2',
 		type: 'Personalizada',
 		description: '',
 		colors:[
@@ -71,7 +71,7 @@ export const collection = [
 	},
 	{
 		id: '6',
-		name: 'Portifolio',
+		name: 'Portifolio 2',
 		type: 'Personalizada',
 		description: '',
 		colors:[
@@ -85,7 +85,7 @@ export const collection = [
 	},
 	{
 		id: '7',
-		name: 'Rifa online',
+		name: 'Rifa online 3',
 		type: 'Personalizada',
 		description: '',
 		colors:[
@@ -99,7 +99,7 @@ export const collection = [
 	},
 	{
 		id: '8',
-		name: 'Color Collection',
+		name: 'Color Collection 3',
 		type: 'Personalizada',
 		description: '',
 		colors:[
@@ -113,7 +113,7 @@ export const collection = [
 	},
 	{
 		id: '9',
-		name: 'Portifolio',
+		name: 'Portifolio 3',
 		type: 'Personalizada',
 		description: '',
 		colors:[

@@ -105,7 +105,7 @@ export const InformacoesDaPaleta = Styled.div`
 
     }
 
-    >.menuDaPaleta{
+    >.opcoesDoMenu{
         background-color: white;
 
         width: 7rem;
