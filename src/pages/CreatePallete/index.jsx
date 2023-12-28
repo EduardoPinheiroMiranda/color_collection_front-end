@@ -5,11 +5,11 @@ import { Question } from '../../components/SVGs/Question'
 // import { MenuFixed } from '../../components/MenuFixed'
 // import { MenuHidden } from '../../components/MenuHidden'
 
-const newPalletColor = [
+const novaPaletaDeCor = [
 	{
-		name: '',
-		category: '',
-		palletColor: ['', '', '', '', '']
+		nome: '',
+		categoria: '',
+		paletaDeCor: ['', '', '', '', '']
 	}
 ]
 
