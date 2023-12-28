@@ -9,6 +9,11 @@ export const Container = Styled.div`
         height: 2rem;
 
         cursor: pointer;
+        transition: all 500ms;
+    }
+
+    svg:hover{
+        transform: scale(0.9, 0.9)
     }
 
     .isLiked{

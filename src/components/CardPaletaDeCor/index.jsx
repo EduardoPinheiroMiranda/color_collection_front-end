@@ -8,15 +8,18 @@ import { MenuDaPaleta } from '../SVGs/MenuDaPaleta'
 
 export function CardPaletaDeCor({id, projectName, type, favorit, colors, posicao}){
 
-	function isLiked(){
-		console.log('adicionado aos favoritos')
-		
+	function favoritar(indice){
+		const hearts = document.querySelectorAll('.heart svg')
+		hearts[indice].classList.toggle('isLiked')
+
+		desativarMenuDaPaleta()
 	}
 
-	function copyColor(id,codColor){
+	function copiarCor(id,codColor){
 
 		navigator.clipboard.writeText('#'+codColor).then( () => {
 			const infoColor = document.querySelector(`#info${codColor}${id}`)
+			
 			infoColor.querySelector('#copy').classList.add('hide')
 			infoColor.querySelector('#check').classList.remove('hide')
 
@@ -25,7 +28,8 @@ export function CardPaletaDeCor({id, projectName, type, favorit, colors, posicao
 				infoColor.querySelector('#check').classList.add('hide')
 			},1500)
 		})
-		
+
+		desativarMenuDaPaleta()
 	}
 	
 	function atualizarPaleta(){
@@ -36,6 +40,14 @@ export function CardPaletaDeCor({id, projectName, type, favorit, colors, posicao
 		alert('deletar')
 	}
 
+	function desativarMenuDaPaleta(){
+		const menusDasPaletas = document.querySelectorAll('.opcoesDoMenu')
+		
+		menusDasPaletas.forEach((menuDapaleta) => {
+			menuDapaleta.classList.remove('ativarMenu')
+		})
+	}
+
 	function ativarMenuDaPaleta(posicaoDaPaleta){
 		const menusDasPaletas = document.querySelectorAll('.opcoesDoMenu')
 
@@ -43,12 +55,9 @@ export function CardPaletaDeCor({id, projectName, type, favorit, colors, posicao
 			if(menusDasPaletas[posicaoDaPaleta] !== menuDaPaleta){
 				menuDaPaleta.classList.remove('ativarMenu')
 			}
-			
 		})
 
 		menusDasPaletas[posicaoDaPaleta].classList.toggle('ativarMenu')
-		//console.log(posicao)
-
 	}
 
 	return(
@@ -64,10 +73,10 @@ export function CardPaletaDeCor({id, projectName, type, favorit, colors, posicao
 								style={{background: `#${color}`}}
 							>
 								<div 
-									id={'info'+color+id}
+									id={'info'+color+id} // padrão de id para cada cor é 'info' mais o 'codigo da cor' mais o 'id da paleta'
 									className= 'infoColor '
 									onClick={() => {
-										copyColor(id,color)
+										copiarCor(id,color)
 									}}
 								>
 									<span>#{color}</span>
@@ -96,7 +105,9 @@ export function CardPaletaDeCor({id, projectName, type, favorit, colors, posicao
 					<div className="elementosDeAcao">
 						<Heart 
 							isFavorit={favorit}
-							onClick={isLiked}
+							onClick={() => {
+								favoritar(posicao)
+							}}
 						/>
 
 						<MenuDaPaleta onClick={() => {
