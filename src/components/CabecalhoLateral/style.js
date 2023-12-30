@@ -70,6 +70,11 @@ export const NavBar = Styled.nav`
                 margin-left: 2rem;
             }
         }
+
+        hr{
+            width: 15rem;
+            margin: 5rem auto;
+        }
     }
 
 `
@@ -78,6 +83,7 @@ export const NavBar = Styled.nav`
 export const TagsElements = Styled.li`
 
     height: 4rem;
+    margin-bottom: 1.8rem;
 
     list-style: none;
     
@@ -94,7 +100,7 @@ export const TagsElements = Styled.li`
             color: ${({ theme }) => theme.colors.colorFont2};
 
             text-decoration: none;
-            font-size: 1.6rem;
+            font-size: 2.4rem;
             font-weight: 500;
 
             cursor: pointer;

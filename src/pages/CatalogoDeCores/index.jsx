@@ -1,19 +1,20 @@
 import { Container } from './style'
 
-import { Header } from '../../components/Header'
+import { CabecalhoDoTopo } from '../../components/CabecalhoDoTopo'
 import { CardPaletaDeCor } from '../../components/CardPaletaDeCor'
 
 import { collection } from '../../../db_teste'//banco de teste
 
-import { MenuHidden } from '../../components/MenuHidden'
-import { MenuFixed } from '../../components/MenuFixed'
+import { MenuDoTopo } from '../../components/MenuDoTopo'
+import { CabecalhoLateral } from '../../components/CabecalhoLateral'
 
 export function CatalogoDeCores(){
 	
 	return(
 		<Container>
-			<Header/>
-			<MenuFixed/>
+			<CabecalhoDoTopo/>
+			<CabecalhoLateral/>
+
 			<main>
 				{
 					collection.map( pallete => {
@@ -32,7 +33,7 @@ export function CatalogoDeCores(){
 					})
 				}
 			</main>
-			<MenuHidden/>
+			<MenuDoTopo/>
 		</Container>
 	)
 }

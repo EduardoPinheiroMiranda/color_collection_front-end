@@ -1,11 +1,11 @@
 import { Search } from '../SVGs/Search'
 import { Container, Header, NavBar, TagsElements } from './style'
 
-export function MenuFixed (){
+export function CabecalhoLateral(){
 
 	function selectSection(id){
 		const sections = document.querySelectorAll('.selector')
-		const links = document.querySelectorAll('.linkToMeneFixed')
+		const links = document.querySelectorAll('.SelecionarSessao')
 		
 		sections.forEach((sectio) => {
 			sectio.classList.remove('selectorOn')
@@ -36,23 +36,25 @@ export function MenuFixed (){
 					<TagsElements>
 						
 						<div onClick={() => {selectSection(0)}}>
-							<a className='linkToMeneFixed'>Home</a>
+							<a className='SelecionarSessao'>Home</a>
 						</div>
 						<div className='selector'></div>
 
 					</TagsElements>
+					
 					<TagsElements>
 						
 						<div onClick={() => {selectSection(1)}}>
-							<a className='linkToMeneFixed'>Adicionar</a>
+							<a className='SelecionarSessao'>Favoritos</a>
 						</div>
 						<div className='selector'></div>
 
 					</TagsElements>
+
 					<TagsElements>
 						
 						<div onClick={() => {selectSection(2)}}>
-							<a className='linkToMeneFixed'>Favoritos</a>
+							<a className='SelecionarSessao'>Análogas</a>
 						</div>
 						<div className='selector'></div>
 
@@ -60,7 +62,7 @@ export function MenuFixed (){
 					<TagsElements>
 						
 						<div onClick={() => {selectSection(3)}}>
-							<a className='linkToMeneFixed'>Categoria</a>
+							<a className='SelecionarSessao'>Complementares</a>
 						</div>
 						<div className='selector'></div>
 
@@ -68,7 +70,7 @@ export function MenuFixed (){
 					<TagsElements>
 						
 						<div onClick={() => {selectSection(4)}}>
-							<a className='linkToMeneFixed'>Analogas</a>
+							<a className='SelecionarSessao'>Compostas</a>
 						</div>
 						<div className='selector'></div>
 
@@ -76,7 +78,7 @@ export function MenuFixed (){
 					<TagsElements>
 						
 						<div onClick={() => {selectSection(5)}}>
-							<a className='linkToMeneFixed'>Monocromáticas</a>
+							<a className='SelecionarSessao'>Monocromáticas</a>
 						</div>
 						<div className='selector'></div>
 
@@ -84,7 +86,7 @@ export function MenuFixed (){
 					<TagsElements>
 						
 						<div onClick={() => {selectSection(6)}}>
-							<a className='linkToMeneFixed'>Tríades</a>
+							<a className='SelecionarSessao'>Quadradas</a>
 						</div>
 						<div className='selector'></div>
 
@@ -92,31 +94,35 @@ export function MenuFixed (){
 					<TagsElements>
 						
 						<div onClick={() => {selectSection(7)}}>
-							<a className='linkToMeneFixed'>Complementares</a>
-						</div>
-						<div className='selector'></div>
-
-					</TagsElements>
-					<TagsElements>
-						
-						<div onClick={() => {selectSection(8)}}>
-							<a className='linkToMeneFixed'>Quadradas</a>
-						</div>
-						<div className='selector'></div>
-
-					</TagsElements>
-					<TagsElements>
-						
-						<div onClick={() => {selectSection(9)}}>
-							<a className='linkToMeneFixed'>Compostas</a>
+							<a className='SelecionarSessao'>Tríades</a>
 						</div>
 						<div className='selector'></div>
 
 					</TagsElements>
 					<TagsElements >
 						
-						<div onClick={() => {selectSection(10)}}>
-							<a className='linkToMeneFixed'>Personalizadas</a>
+						<div onClick={() => {selectSection(8)}}>
+							<a className='SelecionarSessao'>Personalizadas</a>
+						</div>
+						<div className='selector'></div>
+
+					</TagsElements>
+
+					<hr />
+
+					<TagsElements>
+						
+						<div onClick={() => {selectSection(9)}}>
+							<a className='SelecionarSessao'>Adicionar</a>
+						</div>
+						<div className='selector'></div>
+
+					</TagsElements>
+
+					<TagsElements>
+						
+						<div>
+							<a className='SelecionarSessao'>Sair</a>
 						</div>
 						<div className='selector'></div>
 

@@ -1,12 +1,13 @@
 import Styled from 'styled-components'
 
 export const Container = Styled.div`
-
-
     width: 100%;
-    height: calc(100vh - 7rem);
+    height: calc(100vh - 10.1rem);
 
     display: flex;
+
+    position: absolute;
+    top: 10rem;
     
     transform: translateX(-90rem);
     transition: all 600ms;
@@ -43,6 +44,11 @@ export const Navbar = Styled.nav`
                 margin-left: 2rem;
             }
         }
+
+        hr{
+            width: 15rem;
+            margin: 5rem auto;
+        }
     }
 
 
@@ -64,14 +70,12 @@ export const TagsElements = Styled.li`
         z-index: 2;
        
 
-        a{
+        .selecionarSessao_MenuDoTopo{
             color: ${({ theme })=> theme.colors.colorFont2};
 
             text-decoration: none;
             font-size: 1.6rem;
             font-weight: 500;
-
-            cursor: pointer;
             
         }
 
@@ -93,9 +97,8 @@ export const TagsElements = Styled.li`
         transition: all 500ms;
     }
 
-    >.selector{
+    >.selectorOn{
         background-color: ${({ theme }) => theme.colors.colorFont2};
-
         
         width: 95%;
         border-radius: 0 0.5rem 0.5rem 0;

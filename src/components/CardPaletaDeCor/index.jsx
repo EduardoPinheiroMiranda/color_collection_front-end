@@ -98,8 +98,8 @@ export function CardPaletaDeCor({id, projectName, type, favorit, colors, posicao
 
 				<div className="legenda">
 					<div className="descricao">
-						<p>Projeto :<span>{projectName}</span></p>
-						<p>Categoria :<span>{type}</span></p>
+						<p>Projeto : <span>{projectName}</span></p>
+						<p>Categoria : <span>{type}</span></p>
 					</div>
 
 					<div className="elementosDeAcao">

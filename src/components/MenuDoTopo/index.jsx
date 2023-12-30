@@ -1,114 +1,133 @@
-import { Container, Navbar, TagsElements } from './style'
 
-export function MenuHidden(){
+import { Container, Navbar, TagsElements } from './style'
+import { Link } from 'react-router-dom'
+
+export function MenuDoTopo(){
 
 	function selectSection(id){
 		const selectors = document.querySelectorAll('.selectorOff')
-		const links = document.querySelectorAll('.linktoMenuHidden')
+		const links = document.querySelectorAll('.selecionarSessao_MenuDoTopo')
 		
 		selectors.forEach((selector) => {
-			selector.classList.remove('selector')
+			selector.classList.remove('selectorOn')
 		})
-		selectors[id].classList.add('selector')
+		selectors[id].classList.add('selectorOn')
 
 
-		links.forEach((link) => {
-			link.classList.remove('colorLink')
-		})
+		
 		links[id].classList.add('colorLink')
+
+		console.log(links)
 		
 	}
 
 	
 	return(
-		<Container id='menuHidden'>
+		<Container id='menuDoTopo'>
 			
 			<Navbar>
 				<ul>
 					<TagsElements>
 						
 						<div onClick={() => {selectSection(0)}}>
-							<a className='linktoMenuHidden' href='#' >Home</a>
+							<Link className='selecionarSessao_MenuDoTopo' to='/' >Home</Link>
 						</div>
 						<div className='selectorOff'></div>
 
 					</TagsElements>
+
 					<TagsElements>
 						
 						<div onClick={() => {selectSection(1)}}>
-							<a className='linktoMenuHidden' href='#' >Adicionar</a>
+							<a className='selecionarSessao_MenuDoTopo' href='#' >Favoritos</a>
 						</div>
 						<div className='selectorOff'></div>
 
 					</TagsElements>
+
 					<TagsElements>
 						
 						<div onClick={() => {selectSection(2)}}>
-							<a className='linktoMenuHidden' href='#' >Favoritos</a>
+							<a className='selecionarSessao_MenuDoTopo' href='#' >Análogas</a>
 						</div>
 						<div className='selectorOff'></div>
 
 					</TagsElements>
+
 					<TagsElements>
 						
 						<div onClick={() => {selectSection(3)}}>
-							<a className='linktoMenuHidden' href='#' >Categoria</a>
+							<a className='selecionarSessao_MenuDoTopo' href='#' >Complementares</a>
 						</div>
 						<div className='selectorOff'></div>
 
 					</TagsElements>
+
 					<TagsElements>
 						
 						<div onClick={() => {selectSection(4)}}>
-							<a className='linktoMenuHidden' href='#' >Analogas</a>
+							<a className='selecionarSessao_MenuDoTopo' href='#' >Compostas</a>
 						</div>
 						<div className='selectorOff'></div>
 
 					</TagsElements>
+
 					<TagsElements>
 						
 						<div onClick={() => {selectSection(5)}}>
-							<a className='linktoMenuHidden' href='#' >Monocromáticas</a>
+							<a className='selecionarSessao_MenuDoTopo' href='#' >Monocromáticas</a>
 						</div>
 						<div className='selectorOff'></div>
 
 					</TagsElements>
+
 					<TagsElements>
 						
 						<div onClick={() => {selectSection(6)}}>
-							<a className='linktoMenuHidden' href='#' >Tríades</a>
+							<a className='selecionarSessao_MenuDoTopo' href='#' >Quadradas</a>
 						</div>
 						<div className='selectorOff'></div>
 
 					</TagsElements>
+
 					<TagsElements>
 						
 						<div onClick={() => {selectSection(7)}}>
-							<a className='linktoMenuHidden' href='#' >Complementares</a>
+							<a className='selecionarSessao_MenuDoTopo' href='#' >Tríades</a>
 						</div>
 						<div className='selectorOff'></div>
 
 					</TagsElements>
+
 					<TagsElements>
 						
 						<div onClick={() => {selectSection(8)}}>
-							<a className='linktoMenuHidden' href='#' >Quadradas</a>
+							<a className='selecionarSessao_MenuDoTopo' href='#' >Pesrsonalizadas</a>
 						</div>
 						<div className='selectorOff'></div>
 
 					</TagsElements>
+
+					<hr />
+
 					<TagsElements>
 						
 						<div onClick={() => {selectSection(9)}}>
-							<a className='linktoMenuHidden' href='#' >Compostas</a>
+							<Link 
+								className='selecionarSessao_MenuDoTopo'
+								to='/createPallete' 
+							>
+								Adicionar
+							</Link>
 						</div>
 						<div className='selectorOff'></div>
 
 					</TagsElements>
+
 					<TagsElements >
 						
-						<div onClick={() => {selectSection(10)}}>
-							<a className='linktoMenuHidden' href='#'>Personalizadas</a>
+						<div >
+							<a className='selecionarSessao_MenuDoTopo' href='#'>Sair</a>
 						</div>
 						<div className='selectorOff'></div>
 

@@ -3,10 +3,10 @@ import { Container } from './style'
 import { Search } from '../SVGs/Search'
 import { Menu } from '../SVGs/Menu'
 
-export function Header(){
+export function CabecalhoDoTopo(){
 
 	function openMenu(){
-		const menuList = document.querySelector('#menuHidden')
+		const menuList = document.querySelector('#menuDoTopo')
 		const menuIcon = document.querySelector('#menu svg')
 		const blockedSection = document.querySelector('.blockedSection')
 

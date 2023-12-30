@@ -6,9 +6,10 @@ export const Container = Styled.header`
     box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.25);
 
     width: 100%;
-    height: 7rem;
+    height: 10rem;
     padding: 0 2.5rem;
 
+    z-index: 5;
 
     display: flex;
     align-items: center;
