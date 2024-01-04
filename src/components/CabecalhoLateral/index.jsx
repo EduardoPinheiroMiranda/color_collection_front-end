@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { Search } from '../SVGs/Search'
 import { Container, Header, NavBar, TagsElements } from './style'
 
@@ -36,7 +37,7 @@ export function CabecalhoLateral(){
 					<TagsElements>
 						
 						<div onClick={() => {selectSection(0)}}>
-							<a className='SelecionarSessao'>Home</a>
+							<Link to="/" className='SelecionarSessao'>Home</Link>
 						</div>
 						<div className='selector'></div>
 
@@ -113,7 +114,7 @@ export function CabecalhoLateral(){
 					<TagsElements>
 						
 						<div onClick={() => {selectSection(9)}}>
-							<a className='SelecionarSessao'>Adicionar</a>
+							<Link to="/creatPallete" className='SelecionarSessao'>Adicionar</Link>
 						</div>
 						<div className='selector'></div>
 

@@ -1,23 +1,25 @@
-
 import { Container, Navbar, TagsElements } from './style'
 import { Link } from 'react-router-dom'
 
-export function MenuDoTopo(){
+export function MenuLateral(){
 
 	function selectSection(id){
 		const selectors = document.querySelectorAll('.selectorOff')
 		const links = document.querySelectorAll('.selecionarSessao_MenuDoTopo')
 		
-		selectors.forEach((selector) => {
-			selector.classList.remove('selectorOn')
-		})
-		selectors[id].classList.add('selectorOn')
+		function restStyle(elements, clase){
 
+			elements.forEach((element) => {
+				element.classList.remove(clase)
+			})
+		}
+
+		restStyle(selectors, 'selectorOn')
+		restStyle(links, 'colorLink')
 
 		
+		selectors[id].classList.add('selectorOn')
 		links[id].classList.add('colorLink')
-
-		console.log(links)
 		
 	}
 
@@ -30,7 +32,7 @@ export function MenuDoTopo(){
 					<TagsElements>
 						
 						<div onClick={() => {selectSection(0)}}>
-							<Link className='selecionarSessao_MenuDoTopo' to='/' >Home</Link>
+							<Link className='selecionarSessao_MenuDoTopo' to='/'>Home</Link>
 						</div>
 						<div className='selectorOff'></div>
 
@@ -115,7 +117,7 @@ export function MenuDoTopo(){
 						<div onClick={() => {selectSection(9)}}>
 							<Link 
 								className='selecionarSessao_MenuDoTopo'
-								to='/createPallete' 
+								to="/creatPallete"
 							>
 								Adicionar
 							</Link>

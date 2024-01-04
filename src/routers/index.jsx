@@ -1,12 +1,34 @@
-import { BrowserRouter } from 'react-router-dom'
+import { createBrowserRouter } from 'react-router-dom'
 
-import { AppRouters } from './app.routers'
+import { PaginaPrincipal } from '../pages/PaginaPrincipal'
+import { CatalogoDeCores } from '../pages/CatalogoDeCores'
+import { CreatePallete } from '../pages/CreatePallete'
 
+import { CadastrarUsuario } from '../pages/CadastrarUsuario'
+import { Login } from '../pages/Login'
 
-export function Routers(){
-	return(
-		<BrowserRouter basename='/app'>
-			<AppRouters/> 
-		</BrowserRouter>
-	)
-}
+export const router = createBrowserRouter([
+	{
+		path: '/',
+		element: <PaginaPrincipal/>,
+		children: [
+			{
+				path: '/',
+				element: <CatalogoDeCores/>
+			},
+			{
+				path: '/creatPallete',
+				element: <CreatePallete/>,
+			},
+			{
+				path: '/login',
+				element: <Login/>
+			},
+			{
+				path: '/cadastro',
+				element: <CadastrarUsuario/>
+			}
+		]
+	}
+	
+])

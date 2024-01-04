@@ -1,9 +1,6 @@
-import { Container, InfoPallet, CodPallet } from './style'
+import { InfoPallet, CodPallet, Container } from './style'
 
-import { Header } from '../../components/Header'
 import { Question } from '../../components/SVGs/Question'
-// import { MenuFixed } from '../../components/MenuFixed'
-// import { MenuHidden } from '../../components/MenuHidden'
 
 const novaPaletaDeCor = [
 	{
@@ -25,9 +22,9 @@ export function CreatePallete (){
 
 		function invalidValue(){
 
-			newPalletColor[0].palletColor[position] = ''
-			colorCard.setAttribute('style', 'background-color: white')
-			inputs[position].setAttribute('style', `background-color: ${newPalletColor[0].palletColor[position]}`)
+			novaPaletaDeCor[0].paletaDeCor[position] = ''
+			colorCard.setAttribute('style', `background-color: ${({ theme }) => theme.colors.colorFomt1}`)
+			inputs[position].setAttribute('style', `background-color: ${novaPaletaDeCor[0].paletaDeCor[position]}`)
 		}
 
 
@@ -48,7 +45,7 @@ export function CreatePallete (){
 
 
 			if(hexadecimalColor.length == 4 || hexadecimalColor.length == 7){
-				newPalletColor[0].palletColor[position] = hexadecimalColor
+				novaPaletaDeCor[0].paletaDeCor[position] = hexadecimalColor
 			}
 
 
@@ -59,11 +56,11 @@ export function CreatePallete (){
 
 			colorCard.setAttribute(
 				'style', 
-				`background-color: ${newPalletColor[0].palletColor[position]}; 
-				 border-color: ${newPalletColor[0].palletColor[position]}`
+				`background-color: ${novaPaletaDeCor[0].paletaDeCor[position]}; 
+				 border-color: ${novaPaletaDeCor[0].paletaDeCor[position]}`
 			)
 
-			inputs[position].setAttribute('style', `background-color: ${newPalletColor[0].palletColor[position]}`)
+			inputs[position].setAttribute('style', `background-color: ${novaPaletaDeCor[0].paletaDeCor[position]}`)
 
 			
 		}catch(erro){
@@ -89,7 +86,7 @@ export function CreatePallete (){
 
 	return(
 		<Container>
-			<Header/>
+
 			<main>
 				<InfoPallet>
 					<h2>Criar paleta de cores</h2>

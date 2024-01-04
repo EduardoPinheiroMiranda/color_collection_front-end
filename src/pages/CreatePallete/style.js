@@ -1,12 +1,23 @@
 import Styled from 'styled-components'
 
 export const Container = Styled.div`
-    height: 100vh;
+    height: 90%;
     width: 100%;
+
+    
+
+    @media(min-width: 901px){
+        
+
+        #menuDoTopo, #header{ display: none; }
+
+        #menuFixed{ display: block; }
+    }
   
     main{
 
         height: 100%;
+
         min-width: 32rem;
         max-width: 62rem;
 
@@ -35,6 +46,11 @@ export const Container = Styled.div`
 
             cursor: pointer;
         }
+
+    }
+
+    .closeMenu{
+        transform: translateX(0);
     }
 `
 
@@ -89,6 +105,8 @@ export const InfoPallet = Styled.section`
 
             width: 20rem;
             padding: 0 1rem;
+
+            text-align: center;
 
             border: 0.5px solid  ${({ theme }) => theme.colors.blue};
             border-radius: 0.5rem;
@@ -149,6 +167,7 @@ export const CodPallet = Styled.section`
 
 
             input{
+                background-color: ${({ theme }) => theme.colors.colorFont2};
                 width: 6rem;
 
                 text-align: center;
